@@ -1,0 +1,117 @@
+.SearchLayout{
+  background-color: #5677FC;
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+}
+.searchcion {  
+  margin: 10rpx 10rpx 10rpx 10rpx;  
+  position: absolute;  
+  left:25rpx;  
+  z-index: 2;  
+  width: 20px;  
+  height: 20px;  
+  text-align: center;  
+}  
+.searchinput{
+  font-size: 16px;
+  color: white;
+  margin-left: 40rpx;
+}
+.search_arr {  
+  margin-left: 20rpx; 
+  width: 80%; 
+}  
+.search_arr input{  
+  margin-left: 60rpx;  
+  height: 60rpx;  
+  /* border-radius: 5px; */
+}  
+.bc_text {  
+  line-height: 68rpx;  
+  height: 68rpx;  
+  margin-top: 34rpx;  
+}   
+.sousuo {  
+  margin-left: 10rpx;
+  margin-right: 10rpx;  
+  width: 20%;  
+  line-height: 60rpx;  
+  text-align: center;
+  border: 1px solid #ffffff;  
+  border-radius: 10rpx;  
+}  
+.searchText{
+  font-size: 35rpx;
+  color: white;
+}
+.PeopleSingerLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  background-color: white;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.PeopleImageView{
+  display: flex;
+  width: 50%;
+  height: 100%;
+  margin-left: 10rpx;
+  border-radius: 5%;
+}
+.PeopleContextLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.PeopleTitleText{
+  display: flex;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  
+  font-size: 20px;
+  font-weight:bold;
+  color: black;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.PeopleContextText{
+  display: flex;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 16px;
+  color: gainsboro;
+  margin-left: 40rpx;
+}
+.HideShow{
+  display: none;
+}
+.NoStoreText{
+  font-size: 20px;
+  color: gainsboro;
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+}
+.NoProductImage{
+  display: flex;
+  width:  50px;
+  height: 50px;
+  margin-top: 50rpx;
+}
+.ShowNoProductText{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

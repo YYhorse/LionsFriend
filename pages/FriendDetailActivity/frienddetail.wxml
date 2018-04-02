@@ -1,0 +1,50 @@
+<!-- <image class='TopImage' src="{{activityList.activity_images[0].current_url}}"></image> -->
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000">    
+  <block wx:for="{{activityList.activity_images}}" wx:for-index="index"  wx:key="">    
+    <swiper-item>    
+      <image src="{{item.current_url}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>    
+</swiper> 
+<!--显示标题-->
+<view class='SingerLayout'>
+  <image class='ActivityStatusImage' src="{{activityList.activity_state=='underway'?'/images/woking.png':'/images/over.png'}}"></image>
+  <text class='ActivityTitleText'>{{activityList.title}}</text>
+</view>
+<!--显示地址-->
+<view class='SingerLayout' bindtap='点击查看地点'>
+  <image class='LogoImage' src='/images/place.png'></image>
+  <text class='LogoTitleText'>活动地址:</text>
+  <text class='AddressContextText'>{{activityList.address_name}}</text>
+  <view class='SingerEndLayout'>
+    <image class='SingerRightImage' src='/images/right.png'></image>
+  </view>
+</view>
+<!--显示活动日期-->
+<view class='SingerLayout'>
+  <image class='LogoImage' src='/images/time.png'></image>
+  <text class='LogoTitleText'>活动日期:</text>
+  <text class='LogoContextText'>{{activityList.start_at}}</text>
+</view>
+<!--显示活动时间-->
+<view class='SingerLayout'>
+  <image class='LogoImage' src='/images/time.png'></image>
+  <text class='LogoTitleText'>活动时间:</text>
+  <text class='LogoContextText'>{{activityList.time_interval}}</text>
+</view>
+<!--显示联系人-->
+<view class='SingerLayout'  bindtap='点击拨打电话'>
+  <image class='LogoImage' src='/images/people.png'></image>
+  <text class='LogoTitleText'>联系人物:</text>
+  <text class='LogoContextText'>{{activityList.contact_name}}</text>
+  <view class='SingerEndLayout'>
+    <image class='SingerRightImage' src='/images/right.png'></image>
+  </view>
+</view>   
+<!--显示活动详情-->
+<view class='DetailLayout'>
+  <text class='DetailTitle'>活动详情</text>
+  <text class='DetailContext'>\n{{activityList.detail}}\n\n</text>
+</view>
+<!--底部联系-->
+<view class="{{userId==activityList.user_id?'BottomNewServiceLayout':'HideBottom'}}" bindtap='点击删除活动'><text class='NewServiceText'>删除活动</text></view>

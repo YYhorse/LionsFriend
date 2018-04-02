@@ -1,0 +1,32 @@
+<view class='LineLayout'></view>
+<!--产品名称-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>产品名称</text>
+  <input class="InputEditText" placeholder="请输入产品名称" placeholder-style="color:#DADADA" bindinput="输入产品名称"/> 
+</view>
+<!--产品详情-->
+<view class="ServiceDetailLayout">
+  <text class='InputTitleText'>产品详情</text>
+  <textarea class='InputContextText' bindblur="bindTextAreaBlur" auto-height placeholder="请输入产品详情" placeholder-style="color:#DADADA" bindinput="输入产品详情" />
+</view>
+<view class='LineLayout'></view>
+<!--产品原价-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>产品原价</text>
+  <input class="InputEditText" placeholder="请输入产品原价" placeholder-style="color:#DADADA" bindinput="输入产品原价" type='digit'/> 
+</view>
+<!--产品会员价-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>产品会员价</text>
+  <input class="InputEditText" placeholder="请输入产品会员价" placeholder-style="color:#DADADA" bindinput="输入产品会员价" type='digit'/> 
+</view>
+<!--图片展示-->
+<text class='InputTitleText'>图片展示</text>
+<view class='PhotoShowLayout'>
+  <block wx:for="{{image_photo}}" wx:key="index">
+    <image class='ShowPhotoImage' src='{{item}}'  mode="aspectFit"></image>
+  </block>
+  <image class='TakePhotoImage' src='/images/takephoto.png' bindtap='拍摄照片'></image> 
+</view>
+<!--底部发布-->
+<view class='BottomNewServiceLayout' bindtap='点击发布'><text class='NewServiceText'>发布</text></view>

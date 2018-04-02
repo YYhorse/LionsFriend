@@ -1,0 +1,120 @@
+.InputTitleLayout{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputTitleText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 40rpx;
+  width: 180rpx;
+}
+.InputEditText{
+  font-size: 16px;
+  color: gray;
+  margin-left: 20rpx;
+}
+.LineLayout{
+  width: 100%;
+  height: 8rpx;
+  background-color: #F0F0F0;
+}
+.LineLayout2{
+  width: 100%;
+  height: 30rpx;
+  background-color: #F0F0F0;
+}
+.TimeLayout{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  flex-direction: column;
+  justify-content:center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.TimeText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 40rpx;
+}
+.ServiceDetailLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputContextText{
+  display: flex;
+  height: 200rpx;
+  font-size: 16px;
+  color: gray;
+  margin-left: 60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.PlaceText{
+  width: 70%;
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin-left: 50rpx;
+}
+.SingerEndLayout{
+  display: flex;
+  width: 10%;
+  flex-direction: row;
+  justify-content:flex-end;           
+}
+.SingerRightImage{
+  width:  40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+.PhotoShowLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+  align-items: center;
+}
+.TakePhotoImage{
+  display: flex;
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 50rpx;
+}
+.ShowPhotoImage{
+  display: flex;
+  width: 20%;
+  height: 50%;
+  margin: 10rpx;
+}
+
+.BottomNewServiceLayout{
+  display:flex;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 48px;
+  background-color: #E51C23;
+  flex-direction:row;
+  align-items: center;
+  justify-content:center;
+}
+.NewServiceText{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

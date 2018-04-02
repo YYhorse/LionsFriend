@@ -1,0 +1,36 @@
+<!--顶部个人信息展示-->
+<view class='UserInfoLayout'>
+  <image class='AvatarImage' src="{{AvatarUrl}}" background-size="cover" mode="aspectFill"></image>
+  <text class='NiceNameText'>{{NiceName}}</text>
+</view>
+<view class='LineLayout'></view>
+<!--狮友身份验证-->
+<view class="{{VipStatus!='vip'?'SingerLayout':'HideLayout'}}" bindtap='点击身份验证'>
+  <text class='SingerText'>{{VipStatus=='tourist'?'狮友验证':'信息审核中'}}</text>
+  <view class='SingerEndLayout'>
+    <image class='SingerRightImage' src='/images/right.png'></image>
+  </view>
+</view>
+<!--狮友信息管理-->
+<view class="{{VipStatus=='vip'?'ManageLayout':'HideLayout'}}">
+  <view class='SingerLayout' bindtap='点击我的名片'>
+    <text class='SingerText'>我的名片</text>
+    <view class='SingerEndLayout'>
+      <image class='SingerRightImage' src='/images/right.png'></image>
+    </view>
+  </view>
+  <view class='SingerLayout' bindtap='点击店铺管理'>
+    <text class='SingerText'>店铺管理</text>
+    <view class='SingerEndLayout'>
+      <text class="{{ShopStatue=='audit_success'?'HideText':'SingerEndTxt'}}">{{StoreShowInfo}}</text>
+      <image class='SingerRightImage' src='/images/right.png'></image>
+    </view>
+  </view>
+  <view class='SingerLayout' bindtap='点击产品管理'>
+    <text class='SingerText'>产品管理</text>
+    <view class='SingerEndLayout'>
+      <image class='SingerRightImage' src='/images/right.png'></image>
+    </view>
+  </view>
+</view>
+

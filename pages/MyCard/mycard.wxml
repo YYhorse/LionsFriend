@@ -1,0 +1,58 @@
+<view class='LineLayout'></view>
+<!--头像-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>头像</text>
+  <view class='SingerEndLayout'>
+    <image class='ShowPhotoImage' src="{{userInfo.user_images}}" mode="aspectFit"></image>
+  </view>
+</view>
+<!--姓名-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>姓名</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.real_name}}</text>
+  </view>
+</view>
+<!--手机号-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>手机号</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.phone_number}}</text>
+  </view>
+</view>
+<view class='LineLayout'></view>
+<!--所属服务队-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>所属服务队</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.service_team_name}}</text>
+  </view>
+</view>
+<!--入会时间-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>入会时间</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.admission_time}}</text>
+  </view>
+</view>
+<!--现任职务-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>现任职务</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.current_position}}</text>
+  </view>
+</view>
+<!--历任职务-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>历任职务</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.previous_position}}</text>
+  </view>
+</view>
+<!--所获荣誉-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>所获荣誉</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.honor}}</text>
+  </view>
+</view>

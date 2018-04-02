@@ -1,0 +1,36 @@
+<block wx:for="{{friendList}}" wx:key="time">
+  <!--单行数据-->
+  <view data-numid="{{index}}" bindtap="{{item.start_at!=null?'点击指定活动':''}}">
+    <!--顶部标题和状态-->
+    <view class='TopLayout'>
+     <image class='UserImage' src="{{item.user_avatar}}"></image>
+     <view class='ItemLayout'>
+        <text class='UserName'>{{item.contact_name}}</text>
+        <text class='TitleText'>{{item.title}}</text>
+      </view>
+      <image class="{{item.start_at!=null?'ActivityStatue':'HideBottomLayout'}}" src="{{item.activity_state=='underway'?'/images/woking.png':'/images/over.png'}}"></image>
+    </view>
+    <!--中部图片-->
+    <view class='MiddenLayout'>
+      <block wx:for="{{item.activity_images}}" wx:for-item="son" wx:key="index">
+        <image class='ShowPhotoImage' src='{{son.current_url}}' data-src="{{son.current_url}}" mode="aspectFit" bindtap="{{item.start_at==null?'浏览图片':''}}"></image>
+      </block>
+    </view>
+    <!--底部信息-->
+    <view class="{{item.start_at!=null?'BottomLayout':'HideBottomLayout'}}">
+      <view class='ItemLayout2'>
+        <image class='BottomItemImage' src='/images/place.png'></image>
+        <text class='BottomItemText'>{{item.address_name}}</text>
+      </view>
+      <view class='ItemLayout3'>
+        <image class='BottomItemImage' src='/images/time.png'></image>
+        <text class='BottomItemText'>{{item.time_interval}}</text>
+      </view>
+    </view>
+    <view class='BottomLine'></view>
+  </view>
+</block>
+<view class='PushView'background-size="cover" mode="aspectFill" bindtap='点击发布活动'>
+  <image class='PushButton' src='/images/push.png' ></image>
+  <text class='PushText'>发表</text>
+</view>

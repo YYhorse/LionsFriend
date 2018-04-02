@@ -1,0 +1,22 @@
+<view class='LineLayout'></view>
+<!--标题-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>标题</text>
+  <input class="InputEditText" placeholder="请输入标题" placeholder-style="color:#DADADA" bindinput="输入标题"/> 
+</view>
+<!--内容-->
+<view class="ServiceDetailLayout">
+  <text class='InputTitleText'>内容</text>
+  <textarea class='InputContextText' bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" placeholder-style="color:#DADADA" bindinput="输入内容" />
+</view>
+<view class='LineLayout'></view>
+<!--图片展示-->
+<text class='InputTitleText'>图片展示</text>
+<view class='PhotoShowLayout'>
+  <block wx:for="{{image_photo}}" wx:key="index">
+    <image class='ShowPhotoImage' src='{{item}}'  mode="aspectFit"></image>
+  </block>
+  <image class='TakePhotoImage' src='/images/takephoto.png' bindtap='拍摄照片'></image> 
+</view>
+<!--底部发布-->
+<view class='BottomNewServiceLayout' bindtap='点击发布'><text class='NewServiceText'>发布</text></view>

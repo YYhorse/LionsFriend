@@ -1,0 +1,72 @@
+.LineLayout{
+  display: flex;
+  width: 100%;
+  height: 10rpx;
+  background-color: #F3F5F7;
+}
+.swiper {
+  height: 300rpx;
+  width: 100%;
+  display: flex;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.InputTitleLayout{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputTitleText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 40rpx;
+  width: 160rpx;
+}
+.InputEditText{
+  font-size: 16px;
+  color: gray;
+  margin-left: 20rpx;
+}
+.ServiceDetailLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputContextText{
+  display: flex;
+  height: 200rpx;
+  font-size: 16px;
+  color: gray;
+  margin-left: 60rpx;
+  margin-top: 40rpx;
+}
+.HideLayout{
+  display: none;
+}
+.BottomNewServiceLayout{
+  display:flex;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 48px;
+  background-color: green;
+  flex-direction:row;
+  align-items: center;
+  justify-content:center;
+}
+.NewServiceText{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

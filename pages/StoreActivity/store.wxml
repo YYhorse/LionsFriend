@@ -1,0 +1,131 @@
+<view class="{{SelectPostion==0?'ShowLayout':'HideLayout'}}">
+  <!--头像-->
+  <view class='PhotoLayout'>
+    <image class='AvatarImage' src="{{ShopInfoList.user_images}}" background-size="cover" mode="aspectFill"></image>
+  </view>
+  <!--姓名-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>真实姓名</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.real_name}}</text>
+    </view>
+  </view>
+  <!--手机号-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>手机号</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.phone_number}}</text>
+    </view>
+  </view>
+  <view class='LineLayout'></view>
+  <!--所属服务队-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>所属服务队</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.service_team_name}}</text>
+    </view>
+  </view>
+  <!--入会时间-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>入会时间</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.admission_time}}</text>
+    </view>
+  </view>
+  <!--现任职务-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>现任职务</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.current_position}}</text>
+    </view>
+  </view>
+  <!--历任职务-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>历任职务</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.previous_position}}</text>
+    </view>
+  </view>
+  <!--所获荣誉-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>所获荣誉</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.honor}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="{{SelectPostion==1?'ShowLayout':'HideLayout'}}">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000">    
+    <block wx:for="{{ShopInfoList.shop_images}}" wx:for-index="index"  wx:key="">    
+      <swiper-item>    
+        <image src="{{item.current_url}}" class="slide-image" mode="aspectFill"/>    
+      </swiper-item>    
+    </block>    
+  </swiper> 
+  <view class='LineLayout'></view>
+  <!--导航标签-->
+  <view class='MiddleLayout'>
+    <view class='MiddleItemLayout' bindtap='选择全部商品'>
+      <image class='MiddleItemImage' src="{{ShopSelectPostion==0?'/images/A11.png':'/images/A10.png'}}"></image>
+      <text class="{{ShopSelectPostion==0?'MiddleItemTextOn':'MiddleItemTextOff'}}">全部商品</text>
+      <view class="{{ShopSelectPostion==0?'MiddleItemLine':'HideLayout'}}"></view>
+    </view>
+    <view class='MiddleItemLayout' bindtap='选择店铺简介'>
+      <image class='MiddleItemImage' src="{{ShopSelectPostion==1?'/images/A21.png':'/images/A20.png'}}"></image>
+      <text class="{{ShopSelectPostion==1?'MiddleItemTextOn':'MiddleItemTextOff'}}">店铺简介</text>
+      <view class="{{ShopSelectPostion==1?'MiddleItemLine':'HideLayout'}}"></view>
+    </view>
+     <view class='MiddleItemLayout' bindtap='选择店铺优惠'>
+      <image class='MiddleItemImage' src="{{ShopSelectPostion==2?'/images/A31.png':'/images/A30.png'}}"></image>
+      <text class="{{ShopSelectPostion==2?'MiddleItemTextOn':'MiddleItemTextOff'}}">店铺优惠</text>
+      <view class="{{ShopSelectPostion==2?'MiddleItemLine':'HideLayout'}}"></view>
+    </view>
+     <view class='MiddleItemLayout' bindtap='选择店铺地址'>
+      <image class='MiddleItemImage' src="{{ShopSelectPostion==3?'/images/A41.png':'/images/A40.png'}}"></image>
+      <text class="{{ShopSelectPostion==3?'MiddleItemTextOn':'MiddleItemTextOff'}}">店铺地址</text>
+      <view class="{{ShopSelectPostion==3?'MiddleItemLine':'HideLayout'}}"></view>
+    </view>
+  </view>
+  <view class='LineLayout'></view>
+  <!--显示信息-->
+  <view class="{{ShopSelectPostion==0?'MiddleInfoLayout':'HideLayout'}}">
+    <!--展示产品-->
+    <scroll-view class="SonServiceLayout"scroll-y="true" style="height:{{scrollHeight}}px;"> 
+      <block wx:for="{{ProductList}}" wx:key="store_code">
+        <view class='ServicesSingerLayout' data-numid="{{index}}" bindtap="点击指定产品">
+          <!--产品图片-->
+          <image class='ServiceImageView' src='{{item.product_images[0].current_url}}'></image>
+          <!--显示产品信息-->
+          <view class='ServicesContextLayout'>
+            <text class='ServiceTitleText'>{{item.product_name}}</text>
+            <view class='ProductPriceLayout'>
+              <text class='PriceText1'>狮友价</text>
+              <text class='PriceText2'>¥{{item.product_vip}}</text>
+              <view class='Linecss'>
+                <text class='PriceText3'>¥{{item.product_original}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!--显示店铺详情和优惠信息-->
+  <view class="{{ShopSelectPostion!=0?'ShowInfoLayout':'HideLayout'}}">
+    <text class='ShowInfoTitle'>{{ShowTitle}}</text>
+    <text class='ShowInfoContext'>\n{{ShowContext}}\n\n\n</text>
+  </view>
+</view>
+<!--底部发布新业务-->
+<view class='BottomLayout'>
+  <view class="{{SelectPostion==0?'BottomSmallLayoutOn':'BottomSmallLayoutOff'}}" bindtap='选择名片'>
+    <text class="{{SelectPostion==0?'BottomTextOn':'BottomTextOff'}}">名片</text>
+  </view>
+  <view class="{{SelectPostion==1?'BottomBigLayoutOn':'BottomBigLayoutOff'}}" bindtap='选择店铺'>
+    <text class="{{SelectPostion==1?'BottomTextOn':'BottomTextOff'}}">店铺</text>
+  </view>
+  <view class='BottomSmallLayoutOff' bindtap='选择拨号'>
+    <text class='BottomTextOff'>拨号</text>
+  </view>
+</view>

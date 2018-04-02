@@ -1,0 +1,65 @@
+{
+  "pages":[
+    "pages/MainActivity/main",
+    "pages/MyActivity/my",
+    "pages/MyShop/myshop",
+    "pages/MyCard/mycard",
+    "pages/ProductShow/productshow",
+    "pages/StoreActivity/store",
+    "pages/MyProductActivity/myproduct",
+    "pages/MyProductNewActivity/myproductnew",
+    "pages/MyProductDetailActivity/myproductdetail",
+    "pages/HelpActivity/help",
+    "pages/FindPeopleActivity/findpeople",
+    "pages/FindProductActivity/findproduct",
+    "pages/FindDiscountActivity/finddiscount",
+    "pages/HelpSearchActivity/helpsearch",
+    "pages/FriendActivity/friend",
+    "pages/FriendPushActivity/friendpush",
+    "pages/FriendPushBActivity/friendpushb",
+    "pages/FriendDetailActivity/frienddetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#E51C23",
+    "navigationBarTitleText": "狮友圈",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#E51C23",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/home_on.png",
+        "iconPath": "images/home_off.png",
+        "pagePath": "pages/MainActivity/main",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/help_on.png",
+        "iconPath": "images/help_off.png",
+        "pagePath": "pages/HelpActivity/help",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/friend_on.png",
+        "iconPath": "images/friend_off.png",
+        "pagePath": "pages/FriendActivity/friend",
+        "text": "狮友圈"
+      },
+      {
+        "selectedIconPath": "images/my_on.png",
+        "iconPath": "images/my_off.png",
+        "pagePath": "pages/MyActivity/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+     "request": 10000,
+     "downloadFile": 10000
+  },
+  "debug": true
+}

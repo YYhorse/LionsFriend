@@ -1,0 +1,31 @@
+<view class='LineLayout'></view>
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000">    
+  <block wx:for="{{productList.product_images}}" wx:for-index="index"  wx:key="">    
+    <swiper-item>    
+      <image src="{{item.current_url}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>    
+</swiper> 
+<!--产品名称-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>产品名称</text>
+  <text class='InputEditText'>{{productList.product_name}}</text>
+</view>
+<!--产品详情-->
+<view class="ServiceDetailLayout">
+  <text class='InputTitleText'>产品详情</text>
+    <textarea class='InputContextText' value="{{productList.product_detail!=''?productList.product_detail:''}}"/>
+</view>
+<view class='LineLayout'></view>
+<!--产品原价-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>原价</text>
+  <text class='InputEditText'>{{productList.product_original}}</text>
+</view>
+<!--产品会员价-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>狮友价</text>
+  <text class='InputEditText'>{{productList.product_vip}}</text>
+</view>
+<!--底部发布-->
+<view class="{{store_code!=null?'BottomNewServiceLayout':'HideLayout'}}" bindtap='进入狮友店铺'><text class='NewServiceText'>进入狮友店铺</text></view>

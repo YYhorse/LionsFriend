@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<scroll-view class="ScrollLayout" scroll-y="true" scroll-top="0">
+  <!--顶部轮播展示图-->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block wx:for="{{DynamicAdUrl}}" wx:for-index="index"  wx:key="">    
+        <swiper-item>    
+          <image src="{{item.image_url}}" class="slide-image" mode="aspectFill"/>    
+        </swiper-item>    
+      </block>    
+    </swiper> 
+  <!--中部类别选项-->    
+  <view class='CategoryLayout'>
+    <view class='CategoryItemLayout' bindtap='点击找狮友'>
+      <view class='CategoryItemImageLayout'>
+        <image class='CategoryItemImage' src='/images/P1.png' mode="aspectFit"></image>
+      </view>
+      <text class='CategoryItemText'>找狮友</text>
+    </view>
+    <view class='CategoryItemLayout' bindtap='点击找优惠'>
+      <view class='CategoryItemImageLayout'>
+        <image class='CategoryItemImage' src='/images/P2.png' mode="aspectFill"></image>
+      </view>
+      <text class='CategoryItemText'>找优惠</text>
+    </view>
+    <view class='CategoryItemLayout' bindtap='点击找产品'>
+      <view class='CategoryItemImageLayout'>
+        <image class='CategoryItemImage' src='/images/P3.png' mode="aspectFit"></image>
+      </view>
+      <text class='CategoryItemText'>找产品</text>
+    </view>
+    <view class='CategoryItemLayout' bindtap='点击更多'>
+      <view class='CategoryItemImageLayout'>
+        <image class='CategoryItemImage' src='/images/P4.png' mode="aspectFit"></image>
+      </view>
+      <text class='CategoryItemText'>更多</text>
+    </view>
+  </view>
+  <!-- 中下固定广告页-->
+   <image class='AdLayoutImage' src='{{StaticAdUrl}}'></image> 
+  <!-- 底部推荐信息-->
+  <view class='BottomRectLayout'><text class='GroomActivityText'>推荐店铺</text></view>
+  <block wx:for="{{StoreInfo}}" wx:key="id"> 
+    <view class='ActivityInfoLayout' data-numid="{{index}}" bindtap="点击指定店铺">
+      <!--推荐活动图片-->
+      <image class='ActivityImage' src='{{item.store_images[0].current_url}}'></image>
+      <!--推荐活动内容-->
+      <view class='ActivityContextLayout'>
+        <view class='TopItemLayout'>
+          <text class='ActivityTitleText'>{{item.name}}</text>
+          <text class='ActivityDetailText'>{{item.description}}</text>
+        </view>
+        <view class='BottomItemLayout'>
+          <image class='BottomItemImage' src='/images/people.png'></image>
+          <text class='BottomItemText'>{{item.contact_name}}</text>
+          <image class='BottomItemImage' src='/images/place.png'></image>
+          <text class='BottomItem2Text'>{{item.address_name}}</text>
+        </view>
+      </view>
+    </view>
+  </block> 
+</scroll-view>   

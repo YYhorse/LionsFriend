@@ -1,0 +1,215 @@
+.HideView{
+  display: none;
+}
+.ApplyInfoLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.ImageLayout{
+  display: flex;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.ShowPhotoImage{
+  display: flex;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+}
+.InputTitleLayout{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputTitleText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 40rpx;
+  width: 180rpx;
+}
+.InputEditText{
+  font-size: 16px;
+  color: gray;
+  margin-left: 20rpx;
+}
+.SingerEndLayout{
+  display: flex;
+  width: 20%;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;           
+}
+.SingerRightImage{
+  width:  40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.TimeLayout{
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  flex-direction: column;
+  justify-content:center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.TimeText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 40rpx;
+}
+.LineLayout{
+  display: flex;
+  width: 100%;
+  height: 10rpx;
+  background-color: #F3F5F7;
+}
+.ServiceDetailLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputContextText{
+  display: flex;
+  height: 200rpx;
+  font-size: 16px;
+  color: gray;
+  margin-left: 60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.PlaceText{
+  width: 70%;
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin-left: 50rpx;
+}
+.AppleBtn{
+  width: 80%;
+  margin-top: 100rpx;  
+}
+
+.ServiceLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #F3F5F7; 
+  margin-bottom: 48px;
+}
+.ServicesSingerLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  background-color: white;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.ServiceImageView{
+  display: flex;
+  width: 50%;
+  height: 100%;
+  margin-left: 10rpx;
+  border-radius: 5%;
+}
+
+.ServicesContextLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.ServiceTitleText{
+  display: flex;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  
+  font-size: 20px;
+  font-weight:bold;
+  color: black;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+.ServiceDetailText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 12px;
+  color: #d3d3d3;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  height: 80rpx;
+}
+.ServiceContactLayout{
+  display: flex;
+  width: 100%;
+  height: 50rpx;
+  flex-direction: row;
+}
+.ProductPriceLayout{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.PriceText1{
+  font-size: 13px;
+  color: #101010;
+}
+.PriceText2{
+  font-size: 15px;
+  color: #E51C23;
+  margin-left: 10rpx;
+}
+.Linecss{
+  display: flex;
+  height: 1rpx;
+  background: #888888;
+  flex-direction: column;
+  justify-content:center;
+  margin-left: 10rpx;
+}
+.PriceText3{
+  font-size: 15px;
+  color: #CDCDCD;
+}
+.BottomNewServiceLayout{
+  display:flex;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 48px;
+  background-color: #E51C23;
+  flex-direction:row;
+  align-items: center;
+  justify-content:center;
+}
+.NewServiceText{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+

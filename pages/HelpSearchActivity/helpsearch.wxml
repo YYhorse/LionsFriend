@@ -1,0 +1,21 @@
+<view class='LineLayout'></view>
+ <!--展示搜索到业务-->
+  <block wx:for="{{SearchInfoList}}" wx:key="store_code">
+    <view class='ServicesSingerLayout' data-numid="{{index}}" bindtap="点击指定业务">
+      <!--个人业务图片-->
+      <image class='ServiceImageView' src='{{item.picinfo[0].current_url}}'></image>
+      <!--显示个人业务信息-->
+      <view class='ServicesContextLayout'>
+        <text class='ServiceTitleText'>{{item.service_name}}</text>
+        <text class='ServiceDetailText'>{{item.service_detail}}</text>
+        <view class='ServiceContactLayout'>
+          <view class='BottomItemLayout'>
+            <image class='BottomItemImage' src='/images/people.png'></image>
+            <text class='BottomItemText'>{{item.contact_name}}</text>
+          </view>
+          <image class='BottomItemImage' src='/images/place.png'></image>
+          <text class='BottomItem2Text'>{{item.address_name}}</text>
+        </view>
+      </view>
+    </view>
+  </block>

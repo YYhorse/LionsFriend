@@ -1,0 +1,49 @@
+<view class="SearchLayout" >
+  <view class="search_arr">
+    <icon class="searchcion" size='20' color='#ffffff' type='search'></icon>  
+    <input class="searchinput" placeholder="  请输入关键字" placeholder-style="color:#DADADA"  bindinput="输入搜索"/>  
+  </view>  
+  <view class='sousuo' bindtap='点击搜索'><text class='searchText'>搜索</text></view>
+</view>
+<view class='LineLayout'></view>
+<!--子界面 -->
+<view class='SonLayout'>
+  <!--左侧类别-->
+  <scroll-view class="SonCategoryLayout"scroll-y="true" style="height:{{scrollHeight}}px;"> 
+    <block wx:for="{{IndustriesList}}" wx:key="id"> 
+      <view
+        class='CategoryItemLayout'
+        style="background-color:{{index==SelectPostion?'#F3F5F7':'#ffffff'}}"
+        data-numid="{{index}}"
+        bindtap='选中行业显示'>
+        <view class="CategoryName_txt" style="color:{{index==SelectPostion?'#E51C23':'#000000'}}">{{item.name}}</view>    
+      </view>
+    </block> 
+  </scroll-view>
+  <!--右侧业务-->
+  <scroll-view class="SonServiceLayout"scroll-y="true" style="height:{{scrollHeight}}px;"> 
+     <block wx:for="{{StoresList}}" wx:key="id"> 
+       <view class='ServiceInfoLayout' data-numid="{{index}}" bindtap="点击指定店铺">
+          <!--业务信息图片-->
+          <image class='ServiceImage' src='{{item.shop_images[0].current_url}}'></image>
+          <!--业务信息内容-->
+          <view class='ServiceContextLayout'>
+            <view class='TopItemLayout'>
+              <text class='ServiceTitleText'>{{item.shop_name}}</text>
+              <text class='ServiceDetailText'>{{item.shop_detail}}</text>
+            </view>
+            <view class='BottomItemLayout'>
+              <image class='BottomItemImage' src='/images/people.png'></image>
+              <text class='BottomItemText'>{{item.contact_name}}</text>
+              <image class='BottomItemImage' src='/images/place.png'></image>
+              <text class='BottomItem2Text'>{{item.address_name}}</text>
+            </view>
+          </view>
+       </view>
+     </block>
+     <view class="{{StoresList.length>0?'HideShow':'ShowNoProductText'}}">
+        <image class='NoProductImage' src='/images/nofind.png'></image>
+        <text class='NoStoreText'>没有搜索结果</text>
+     </view>
+  </scroll-view>
+</view>

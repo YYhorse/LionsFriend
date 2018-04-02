@@ -1,0 +1,279 @@
+
+.HideLayout{
+  display: none;
+}
+.ShowLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.LineLayout{
+  display: flex;
+  width: 100%;
+  height: 10rpx;
+  background-color: #F3F5F7;
+}
+.PhotoLayout{
+  display: flex;
+  width: 100%;
+  height: 300rpx;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
+  padding: 5px 0;
+  background-color: #E8E8E8;
+  border-bottom: 1px solid #ededed;
+}
+.AvatarImage{
+  display: flex;
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 20rpx;
+  border-radius: 100%;
+  background: gray;
+}
+.InputTitleLayout{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  flex-direction: row;
+  align-items: center; 
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputTitleText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 50rpx;
+  width: 180rpx;
+}
+.SingerEndLayout{
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: flex-end;          
+}
+.SingerContextText{
+  font-size: 16px;
+  color: gainsboro;
+  margin-right: 50rpx;
+}
+
+.swiper {
+  height: 350rpx;
+  width: 100%;
+  display: flex;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.MiddleLayout{
+  display: flex;
+  width: 100%;
+  height: 120rpx; 
+  flex-direction: row;
+}
+.MiddleItemLayout{
+  display: flex;
+  width: 25%;
+  height:120rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ededed;
+}
+.MiddleItemImage{
+  display: flex;
+  width:  60rpx;
+  height: 60rpx;
+}
+.MiddleItemTextOn{
+  font-size: 12px;
+  color: #D81E06;
+  margin-top: 5rpx;
+}
+.MiddleItemTextOff{
+  font-size: 12px;
+  color: #cdcdcd;
+  margin-top: 5rpx;
+}
+.MiddleItemLine{
+   display:flex;
+   width: 100%;
+   height: 5rpx;
+   background-color: #D81E06;
+   margin-left: 10rpx;
+   margin-right: 10rpx;
+   margin-top: 20rpx;
+}
+.MiddleInfoLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.ShowInfoLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #F0F0F0;
+}
+.ShowInfoTitle{
+  font-size: 18px;
+  color: black;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.ShowInfoContext{
+  font-size: 15px;
+  color: gray;
+  margin-left: 50rpx;
+}
+.SonServiceLayout{
+  display: flex;
+  background-color: #F3F5F7;   
+  width: 100%;
+  height: 100%;
+  margin-bottom: 80rpx;
+  flex-direction:column;
+}
+.ServicesSingerLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  background-color: white;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.ServiceImageView{
+  display: flex;
+  width: 50%;
+  height: 100%;
+  margin-left: 10rpx;
+}
+
+.ServicesContextLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.ServiceTitleText{
+  display: flex;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  
+  font-size: 20px;
+  font-weight:bold;
+  color: black;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+.ServiceContactLayout{
+  display: flex;
+  width: 100%;
+  height: 50rpx;
+  flex-direction: row;
+}
+.ProductPriceLayout{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.PriceText1{
+  font-size: 13px;
+  color: #101010;
+}
+.PriceText2{
+  font-size: 15px;
+  color: #E51C23;
+  margin-left: 10rpx;
+}
+.Linecss{
+  display: flex;
+  height: 1rpx;
+  background: #888888;
+  flex-direction: column;
+  justify-content:center;
+  margin-left: 10rpx;
+}
+.PriceText3{
+  font-size: 15px;
+  color: #CDCDCD;
+}
+
+.BottomLayout{
+  display:flex;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 80rpx;
+  background-color: white;
+  flex-direction:row;
+  align-items: center;
+  justify-content:center;
+}
+.BottomSmallLayoutOn{
+  display:flex;
+  width: 30%;
+  height: 70rpx;
+  padding: 5px 0;
+  background-color: #E51C23;
+  border: 1px solid #ededed;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+.BottomSmallLayoutOff{
+  display:flex;
+  width: 30%;
+  height: 70rpx;
+  background-color: white;
+  padding: 5px 0;
+  border: 1px solid #ededed;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+.BottomBigLayoutOn{
+  display:flex;
+  width: 60%;
+  height: 70rpx;
+  padding: 5px 0;
+  background-color: #E51C23;
+  border: 1px solid #ededed;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+.BottomBigLayoutOff{
+  display:flex;
+  width: 60%;
+  height: 70rpx;
+  padding: 5px 0;
+  background-color: white;
+  border: 1px solid #ededed;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+.BottomTextOn{
+  font-size: 16px;
+  color: white;
+}
+.BottomTextOff{
+  font-size: 16px;
+  color: black;
+}

@@ -1,0 +1,85 @@
+.LineLayout{
+  width: 100%;
+  height: 10rpx;
+  background-color: #d3d3d3;
+}
+.ServicesSingerLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  background-color: white;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.ServiceImageView{
+  display: flex;
+  width: 40%;
+  height: 100%;
+  margin-left: 10rpx;
+}
+.ServicesContextLayout{
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+}
+.ServiceTitleText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  
+  font-size: 20px;
+  color: black;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.ServiceDetailText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 15px;
+  color: #d3d3d3;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  height: 80rpx;
+}
+.ServiceContactLayout{
+  display: flex;
+  width: 100%;
+  height: 50rpx;
+  flex-direction: row;
+}
+.BottomItemLayout{
+  width: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: bottom;
+  margin-left: 20rpx;
+}
+.BottomItemImage{
+  display: flex;
+  width:  30px;
+  height: 20px;
+}
+.BottomItemText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 25rpx;
+  color: #d3d3d3;
+  width: 180rpx;
+  margin-left: 5rpx;
+}
+.BottomItem2Text{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 25rpx;
+  color: #d3d3d3;
+  width: 250rpx;
+  margin-left: 2rpx;
+}

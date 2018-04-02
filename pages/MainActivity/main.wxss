@@ -1,0 +1,158 @@
+.ScrollLayout{
+  display: flex;
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  top: 0rpx;
+}
+.swiper {
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.AdLayoutImage{
+  display: flex;
+  width: 100%;
+  height: 30%;
+}
+/**类别信息**/
+.CategoryLayout{
+  display: flex;
+  width: 100%;
+  height: 150rpx;
+  flex-direction: row;
+  align-items: center;
+}
+.CategoryItemLayout{
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+}
+.CategoryItemImageLayout{
+  display: flex;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #BD8E40;
+  border-radius: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+.CategoryItemImage{
+  display: flex;
+  width: 60rpx;
+  height: 60rpx;
+}
+.CategoryItemText{
+  font-size: 25rpx;
+  color: black;
+  margin-top: 5rpx;
+}
+/** 底部推荐信息 **/
+.BottomRectLayout{
+  width: 100%;
+  height: 50rpx;
+  background-color: #F5F5F5;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+.GroomActivityText{
+  display: flex;
+  margin-left: 20rpx;
+  font-size: 18px;
+  font-weight:bold;
+}
+.ActivityInfoLayout{
+  display: flex;
+  width: 97%;
+  height: 200rpx;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 10rpx;
+  
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.ActivityImage{
+  display: flex;
+  width: 40%;
+  height: 100%;
+  margin-left: 10rpx;
+  border-radius: 5%;
+}
+.ActivityContextLayout{
+  display: flex;
+  width: 50%;
+  height: 200rpx;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.TopItemLayout{
+  display: flex;
+  width: 100%;
+  height: 80%;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.ActivityTitleText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  
+  font-size: 18px;
+  font-weight:bold;
+  color: black;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.ActivityDetailText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 13px;
+  color: #d3d3d3;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  height: 80rpx;
+}
+.BottomItemLayout{
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.BottomItemImage{
+  display: flex;
+  width:  15px;
+  height: 15px;
+}
+.BottomItemText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 20rpx;
+  color: #d3d3d3;
+  width: 120rpx;
+  margin-left: 5rpx;
+}
+.BottomItem2Text{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size: 20rpx;
+  color: #d3d3d3;
+  width: 70%;
+  margin-left: 5rpx;
+}

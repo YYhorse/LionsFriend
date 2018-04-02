@@ -1,0 +1,53 @@
+<view class='LineLayout'></view>
+<!--活动标题-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>活动标题</text>
+  <input class="InputEditText" placeholder="请输入标题" placeholder-style="color:#DADADA" bindinput="输入标题"/> 
+</view>
+<!--活动地点-->
+<view class='InputTitleLayout' bindtap='点击选择地点'>
+  <text class='InputTitleText'>活动地点</text>
+  <text class='PlaceText'>{{PlaceClass.name}}</text>
+  <view class='SingerEndLayout'>
+    <image class='SingerRightImage' src='/images/right.png'></image>
+  </view>
+</view>
+<!--活动须知-->
+<view class="ServiceDetailLayout">
+  <text class='InputTitleText'>活动须知</text>
+  <textarea class='InputContextText' bindblur="bindTextAreaBlur" auto-height placeholder="请输入活动须知" placeholder-style="color:#DADADA" bindinput="输入详情" />
+</view>
+<view class='LineLayout'></view>
+<!--选择活动日期-->
+<view class='TimeLayout'>
+  <picker mode="date" value="{{Dates}}" start="2018-03-11" end="2020-03-11" bindchange="监听日期变化">  
+    <text class='TimeText'>活动日期:</text>
+    <text class='TimeText' placeholder='点击选取'>{{Dates}}</text>
+  </picker>
+</view>
+<!--选择活动开始时间-->
+<view class='TimeLayout'>
+  <picker mode="time" value="{{BeginTime}}" start="08:00" end="24:00" bindchange="监听开始时间变化">  
+    <text class='TimeText'>开始时间:</text>
+    <text class='TimeText'>{{BeginTime}}</text>
+  </picker>  
+</view>
+<!--选择活动结束时间-->
+<view class='TimeLayout'>
+  <picker mode="time" value="{{EndTime}}" start="08:00" end="24:00" bindchange="监听结束时间变化">  
+    <text class='TimeText'>结束时间:</text>
+    <text class='TimeText'>{{EndTime}}</text>
+  </picker>  
+</view>
+<view class='LineLayout2'></view>
+<!--图片展示-->
+<text class='InputTitleText'>图片展示</text>
+<view class='PhotoShowLayout'>
+  <block wx:for="{{image_photo}}" wx:key="index">
+   <!-- <image class="{{image_photo!=null?'ShowPhotoImage':'HidePhotoImage'}}" src='{{image_photo}}'></image>  -->
+    <image class='ShowPhotoImage' src='{{item}}'  mode="aspectFit"></image>
+  </block>
+  <image class='TakePhotoImage' src='/images/takephoto.png' bindtap='拍摄照片'></image> 
+</view>
+<!--底部发布-->
+<view class='BottomNewServiceLayout' bindtap='点击发布'><text class='NewServiceText'>发布</text></view>

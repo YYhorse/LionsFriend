@@ -1,0 +1,26 @@
+<view class='LineLayout'></view>
+<!--展示推荐店铺-->
+<block wx:for="{{StoreInfo}}" wx:key="id"> 
+    <view class='ActivityInfoLayout' data-numid="{{index}}" bindtap="点击指定店铺">
+      <!--推荐活动图片-->
+      <image class='ActivityImage' src='{{item.shop_images[0].current_url}}'></image>
+      <!--推荐活动内容-->
+      <view class='ActivityContextLayout'>
+        <view class='TopItemLayout'>
+          <text class='ActivityTitleText'>{{item.shop_name}}</text>
+          <text class='ActivityDetailText'>{{item.shop_detail}}</text>
+          <text class='DiscountText'>优惠:{{item.shop_discount}}</text>
+        </view>
+        <view class='BottomItemLayout'>
+          <image class='BottomItemImage' src='/images/people.png'></image>
+          <text class='BottomItemText'>{{item.contact_name}}</text>
+          <image class='BottomItemImage' src='/images/place.png'></image>
+          <text class='BottomItem2Text'>{{item.address_name}}</text>
+        </view>
+      </view>
+    </view>
+</block> 
+<view class="{{(StoreInfo.length>0||StoreInfo==null)?'HideShow':'ShowNoProductText'}}">
+  <image class='NoProductImage' src='/images/nofind.png'></image>
+  <text class='NoStoreText'>没有优惠店铺</text>
+</view>

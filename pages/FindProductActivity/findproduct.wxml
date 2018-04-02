@@ -1,0 +1,31 @@
+<view class="SearchLayout" >
+  <view class="search_arr">
+    <icon class="searchcion" size='20' color='#ffffff' type='search'></icon>  
+    <input class="searchinput" placeholder="  请输入产品信息" placeholder-style="color:#DADADA"  bindinput="请输入产品信息"/>  
+  </view>  
+  <view class='sousuo' bindtap='点击搜索'><text class='searchText'>搜索</text></view>
+</view>
+<view class='LineLayout'></view>
+<!--展示产品-->
+<block wx:for="{{ProductList}}" wx:key="store_code">
+  <view class='ProductSingerLayout' data-numid="{{index}}" bindtap="点击指定产品">
+    <!--产品图片-->
+    <image class='ProductImageView' src='{{item.product_images[0].current_url}}'></image>
+    <!--显示产品信息-->
+    <view class='ProductContextLayout'>
+      <text class='ProductTitleText'>{{item.product_name}}</text>
+      <view class='ProductPriceLayout'>
+          <text class='PriceText1'>狮友价</text>
+          <text class='PriceText2'>¥{{item.product_vip}}</text>
+          <view class='Linecss'>
+            <text class='PriceText3'>¥{{item.product_original}}</text>
+          </view>
+        </view>
+    </view>
+  </view>
+</block>
+<view class="{{(ProductList.length>0||ProductList==null)?'HideShow':'ShowNoProductText'}}">
+  <image class='NoProductImage' src='/images/nofind.png'></image>
+  <text class='NoStoreText'>没有搜索结果</text>
+</view>
+

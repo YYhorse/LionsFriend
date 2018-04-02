@@ -1,0 +1,76 @@
+.UserInfoLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  background-color: #E51C23;
+  flex-direction: row;
+  align-items: center;
+}
+.AvatarImage{
+  display: flex;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+  margin-left: 50rpx;
+  background: gray;
+}
+.NiceNameText{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.LineLayout{
+  width: 100%;
+  height: 10rpx;
+  background-color: #d3d3d3;
+}
+.HideLayout{
+   display: none;
+}
+.SingerLayout{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.SingerText{
+  font-size: 20px;
+  color: black;
+  margin-left: 20rpx;
+  width: 300rpx;
+}
+.SingerEndLayout{
+  display: flex;
+  width: 70%;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: center;           
+}
+.SingerEndTxt{
+  font-size: 15px;
+  color: #CDCDCD;
+  margin-right: 20rpx;
+}
+.HideText{
+  display: none;
+}
+.SingerContextText{
+  font-size: 20px;
+  color: gray;
+}
+.SingerRightImage{
+  width:  40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+.ManageLayout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}

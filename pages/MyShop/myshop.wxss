@@ -1,0 +1,144 @@
+.LineLayout{
+  display: flex;
+  width: 100%;
+  height: 10rpx;
+  background-color: #F3F5F7;
+}
+.swiper {
+  height: 300rpx;
+  width: 100%;
+  display: flex;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.InputTitleLayout{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  flex-direction: row;
+  align-items: center; 
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.ServiceDetailLayout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.InputTitleText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 50rpx;
+  width: 180rpx;
+}
+.InputTitleText2{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 50rpx;
+  width: 180rpx;
+  margin-top: 50rpx;
+}
+.InputEditText{
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin-left: 10rpx;
+}
+.InputContextText{
+  display: flex;
+  height: 100%;
+  font-size: 16px;
+  color: gray;
+  margin-left: 60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.SingerEndLayout{
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: flex-end;          
+}
+.SingerContextText{
+  font-size: 16px;
+  color: gainsboro;
+  margin-right: 50rpx;
+}
+.PlaceText{
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin-right: 10rpx;
+}
+.TimeLayout{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  flex-direction: column;
+  justify-content:center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+}
+.TimeText{
+  font-size: 16px;
+  color: black;
+  font-weight:bold;
+  margin-left: 50rpx;
+}
+.TimeText2{
+  font-size: 16px;
+  color: #DCDCDC;
+  margin-left: 70rpx;
+}
+.SingerRightImage{
+  display: flex;
+  width:  40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.PhotoShowLayout{
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  flex-direction: row;
+  padding: 5px 0;
+  border-bottom: 1px solid #ededed;
+  align-items: center;
+  margin-left: 40rpx;
+}
+.TakePhotoImage{
+  display: flex;
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 50rpx;
+}
+.ShowPhotoImage{
+  display: flex;
+  width: 20%;
+  height: 50%;
+  margin: 10rpx;
+}
+.BottomNewServiceLayout{
+  display:flex;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 50;
+  width: 100%;
+  height: 48px;
+  background-color: #E51C23;
+  flex-direction:row;
+  align-items: center;
+  justify-content:center;
+}
+.NewServiceText{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
