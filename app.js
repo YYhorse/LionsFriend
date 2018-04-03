@@ -51,7 +51,10 @@ App({
           }
         }
         else{
-          wx.showToast({ title: '登录失败,接口' + Ares.data.status_code, })
+          wx.showModal({
+            title: '登录失败',
+            content: '接口返回：' + Ares.data,
+          })
         }
       },
       fail: function () { wx.hideLoading(); wx.showToast({ title: '登录失败，服务器异常', }) }

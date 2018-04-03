@@ -9,6 +9,9 @@ Page({
     PhoneNumber: '',
     ServiceTeamIndex: 0,  
     ServiceTeam: [''],  
+    SelectServiceTeam:'',
+    BirthPlace:'',
+    AddressDetail:'',
     JoinDats:'',
     CurrentPosition:'',
     PreviousPosition:'',
@@ -21,7 +24,6 @@ Page({
     PullUpRefreshStatus: false,
   },
   onLoad: function (options) {
-    app.globalData.vipStatus = 'tourist'; /////////////////////////
     this.setData({ VipStatus: app.globalData.vipStatus });
     console.log("子状态:" + this.data.VipStatus);
     if (this.data.VipStatus == 'vip') {
@@ -51,11 +53,13 @@ Page({
   },
   // 上拉加载更多
   onReachBottom: function () {
-    console.log("上拉加载");
-    wx.showNavigationBarLoading();
-    this.data.PullUpRefreshStatus = true;
-    this.data.current_page = this.data.current_page + 1;
-    this.获取产品();
+    if (this.data.VipStatus == 'vip') {
+      console.log("上拉加载");
+      wx.showNavigationBarLoading();
+      this.data.PullUpRefreshStatus = true;
+      this.data.current_page = this.data.current_page + 1;
+      this.获取产品();
+    }
   },
   获取服务队信息:function(){
     var that = this;
@@ -97,8 +101,24 @@ Page({
   输入手机号: function (e) {
     this.setData({ PhoneNumber: e.detail.value })
   },
+  输入服务队:function(e){
+    this.setData({ SelectServiceTeam: e.detail.value})
+  },
   监听服务队:function(e){
-    this.setData({ ServiceTeamIndex: e.detail.value })  
+    this.data.ServiceTeamIndex = e.detail.value;
+    this.setData({ SelectServiceTeam: this.data.ServiceTeam[this.data.ServiceTeamIndex]})  
+  },
+  输入出生地:function(e){
+    this.setData({ BirthPlace: e.detail.value})
+  },
+  点击选择地点: function (e) {
+    console.log("点击选择地点")
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        that.setData({ AddressDetail: res.address  })
+      }
+    })
   },
   监听日期变化:function(e){
     this.setData({  JoinDats: e.detail.value  })
@@ -113,8 +133,23 @@ Page({
     this.setData({ Honor: e.detail.value })
   },
   点击提交信息: function (e) {
+
+    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生地：" + this.data.BirthPlace + "现居地:" + this.data.AddressDetail+ "服务队:" + this.data.SelectServiceTeam + "入会时间:" + this.data.JoinDats + "现任:" + this.data.CurrentPosition + "历任:" + this.data.PreviousPosition + "荣耀:" + this.data.Honor+"图片:"+this.data.image_photo);
+    if (this.data.RealName != '' && this.data.PhoneNumber != ''
+      && this.data.BirthPlace != '' && this.data.AddressDetail != ''
+      && this.data.SelectServiceTeam != '' && this.data.JoinDats != '') {
+      if (this.data.image_photo=='')
+        wx.showToast({ title: '请上传一张图片', });
+      else {
+        wx.showLoading({ title: '提交中' });
+        this.UpdateInfo();
+      }
+    }
+    else
+      wx.showToast({ title: '带*号的必填', });
+  },
+  UpdateInfo:function(){
     var that = this;
-    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "服务队:" + this.data.ServiceTeam[this.data.ServiceTeamIndex] + "入会时间:" + this.data.JoinDats + "现任:" + this.data.CurrentPosition + "历任:" + this.data.PreviousPosition + "荣耀:" + this.data.Honor+"图片:"+this.data.image_photo);
     wx.showLoading({ title: '提交中' });
     wx.uploadFile({
       url: getApp().globalData.HomeUrl + getApp().globalData.PushUserUrl,
@@ -124,7 +159,9 @@ Page({
         'user_id': app.globalData.user_id,
         'real_name': that.data.RealName,
         'phone_number': that.data.PhoneNumber,
-        'service_team_name': that.data.ServiceTeam[that.data.ServiceTeamIndex],
+        'birthplace': that.data.BirthPlace,
+        'address_detail': that.data.AddressDetail,
+        'service_team_name': that.data.SelectServiceTeam,
         'admission_time': that.data.JoinDats,
         'current_position': that.data.CurrentPosition,
         'previous_position': that.data.PreviousPosition,
@@ -157,9 +194,11 @@ Page({
           })
         }
       },
-      fail: function () { wx.hideLoading(); wx.showToast({ title: '获取失败,服务器异常', }) }
-    })    
-  },
+      fail: function () { 
+        wx.hideLoading(); 
+        wx.showToast({ title: '获取失败,服务器异常', }) }
+      })    
+  },  
   ///////////////////////////////////////////////////////////////////////////////////////////
   //////////////                      产品管理                                 ///////////////
   ///////////////////////////////////////////////////////////////////////////////////////////

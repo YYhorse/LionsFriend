@@ -2,7 +2,7 @@
 <view class="{{VipStatus=='vip'?'HideView':'ApplyInfoLayout'}}">
   <!--上传头像-->
   <view class='InputTitleLayout' bindtap='上传照片'>
-    <text class='InputTitleText'>我的照片</text>
+    <text class='InputTitleText'>*我的照片</text>
     <view class='ImageLayout'></view>
     <view class='SingerEndLayout'>
       <image class='ShowPhotoImage' src="{{image_photo==''?'/images/P1.png':image_photo}}"  mode="aspectFit"></image>
@@ -12,25 +12,41 @@
   <view class='LineLayout'></view>
   <!--输入真实姓名-->
   <view class='InputTitleLayout'>
-    <text class='InputTitleText'>真实姓名</text>
+    <text class='InputTitleText'>*真实姓名</text>
     <input class="InputEditText" placeholder="请输入真实姓名" placeholder-style="color:#DADADA" bindinput="输入姓名"/> 
   </view>
   <!--输入手机号-->
   <view class='InputTitleLayout'>
-    <text class='InputTitleText'>手机号码</text>
+    <text class='InputTitleText'>*手机号码</text>
     <input class="InputEditText" placeholder="请输入手机号" placeholder-style="color:#DADADA" bindinput="输入手机号"/> 
   </view>
+  <!--输入出生地点-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>*出生地点</text>
+    <input class="InputEditText" placeholder="请输入出生地点" placeholder-style="color:#DADADA" bindinput="输入出生地"/> 
+  </view>
+  <!--居住地地点-->
+  <view class='InputTitleLayout2' bindtap='点击选择地点'>
+    <text class='InputTitleText'>*现居地址</text>
+    <view class='SingerEndLayout2'>
+      <text class='PlaceText'>{{AddressDetail}}</text>
+      <image class='SingerRightImage' src='/images/right.png'></image>
+    </view>
+  </view>
+  <view class='LineLayout'></view>
   <!--选择服务队-->
-  <view class='TimeLayout'>
-    <picker value="{{ServiceTeamIndex}}" range="{{ServiceTeam}}" bindchange="监听服务队">  
-      <text class='TimeText'>服务队名</text>
-      <text class='TimeText' placeholder='点击选取'>{{ServiceTeam[ServiceTeamIndex]}}</text>
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>*服务队名</text>
+    <input class="InputEditText" placeholder="请输入服务队名" placeholder-style="color:#DADADA" bindinput="输入服务队" value='{{SelectServiceTeam}}'/> 
+    <picker class='Picker' value="{{ServiceTeamIndex}}" range="{{ServiceTeam}}" bindchange="监听服务队"> 
+        <text class='TimeText2' placeholder='点击选取' >选择</text>
     </picker>
+
   </view>
   <!--选择入会时间-->
   <view class='TimeLayout'>
     <picker mode="date" value="{{JoinDats}}" start="2016-03-11" end="2020-03-11" bindchange="监听日期变化">  
-      <text class='TimeText'>选择入会时间:</text>
+      <text class='TimeText'>*入会时间:</text>
       <text class='TimeText' placeholder='点击选取'>{{JoinDats}}</text>
     </picker>
   </view>
