@@ -85,11 +85,13 @@ Page({
   },
   // 上拉加载更多
   onReachBottom: function () {
-    console.log("上拉加载");
-    wx.showNavigationBarLoading();
-    this.data.PullUpRefreshStatus = true;
-    this.data.current_page = this.data.current_page + 1;
-    this.获取产品();
+    if (this.data.SelectPostion ==1){
+      console.log("上拉加载");
+      wx.showNavigationBarLoading();
+      this.data.PullUpRefreshStatus = true;
+      this.data.current_page = this.data.current_page + 1;
+      this.获取产品();
+    }
   },
   获取产品: function () {
     var that = this;

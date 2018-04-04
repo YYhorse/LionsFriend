@@ -21,6 +21,21 @@
   </view>
 </view>
 <view class='LineLayout'></view>
+<!--出生地-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>出生地</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.birthplace}}</text>
+  </view>
+</view>
+<!--现居地-->
+<view class='InputTitleLayout'>
+  <text class='InputTitleText'>现居地</text>
+  <view class='SingerEndLayout'>
+    <text class='SingerContextText'>{{userInfo.current_residence}}</text>
+  </view>
+</view>
+<view class='LineLayout'></view>
 <!--所属服务队-->
 <view class='InputTitleLayout'>
   <text class='InputTitleText'>所属服务队</text>
