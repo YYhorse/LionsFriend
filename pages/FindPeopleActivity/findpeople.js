@@ -3,6 +3,7 @@ Page({
   data: {
     FindText:null,
     PeopleList:null,
+    BackMainStatus:false,
     // current_page: 0,
     // Max_page: 100,
     // PullDownRefreshStatus: false,
@@ -10,6 +11,13 @@ Page({
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: '找狮友' });
+    if (options.name!=''){
+      this.setData({
+        BackMainStatus:true,
+        FindText: options.name
+      })
+      this.点击搜索();
+    }
   },
   // onShow: function () {
 
@@ -61,6 +69,10 @@ Page({
       },
       fail: function () { wx.showToast({ title: '获取狮友信息错误，服务器错误' }) }
     })
+  },
+  点击进入狮友圈:function(e){
+    console.log('进入狮友圈');
+    wx.switchTab({ url: '/pages/MainActivity/main' })
   }
   
   // // 下拉刷新  

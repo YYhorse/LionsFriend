@@ -71,3 +71,6 @@
     <text class='SingerContextText'>{{userInfo.honor}}</text>
   </view>
 </view>
+<!--底部更新-->
+ <button class='BottomNewServiceLayout' open-type='share' data-name='ShareBtn'><text class='NewServiceText'>名片分享</text></button> 
+<!-- <view class='BottomNewServiceLayout' bindtap='点击名片分享' ><text class='NewServiceText'>名片分享</text></view> -->

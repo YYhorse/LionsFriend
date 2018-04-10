@@ -31,5 +31,22 @@ Page({
         wx.showToast({ title: '获取失败,服务器异常', }) 
       }
     })
-  }
+  },
+  onShareAppMessage:function(options){
+    var that = this;
+    console.log(options.from);
+    return{
+      title: that.data.userInfo.real_name + '的名片',
+      path: '/pages/FindPeopleActivity/findpeople?name=' + that.data.userInfo.real_name,
+      imageUrl: that.data.userInfo.user_images,
+      success(e){
+        wx.showShareMenu({
+          withShareTicket:true
+        });
+      },
+      fail(e){
+
+      }
+    }
+  },
 })

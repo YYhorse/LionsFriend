@@ -23,3 +23,6 @@
   <image class='NoProductImage' src='/images/nofind.png'></image>
   <text class='NoStoreText'>没有搜索结果</text>
 </view>
+
+<!--底部更新-->
+<view class="{{BackMainStatus==true?'BottomNewServiceLayout':'HideShow'}}" bindtap='点击进入狮友圈'><text class='NewServiceText'>进入狮友圈</text></view>
