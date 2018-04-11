@@ -32,7 +32,8 @@
 .InputEditText{
   font-size: 16px;
   color: gray;
-  margin-left: 20rpx;
+  margin: 2px;
+  border: 1px solid #ededed;
 }
 .ServiceDetailLayout{
   display: flex;
