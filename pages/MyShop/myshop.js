@@ -321,5 +321,8 @@ Page({
       },
       fail: function () { wx.showToast({ title: '获取失败,服务器异常', }) }
     })
+  },
+  点击联系客服:function(e){
+    wx.makePhoneCall({ phoneNumber: '13079896396' })
   }
 })

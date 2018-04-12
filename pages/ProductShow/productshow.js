@@ -34,5 +34,15 @@ Page({
       },
       fail: function () { wx.showToast({ title: '获取狮友信息错误，服务器错误' }) }
     })
-  }
+  },
+  浏览图片: function (e) {
+    var current = e.target.dataset.src;
+    console.log(current);
+    var piclist = [];
+    piclist.push(current)
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: piclist // 需要预览的图片http链接列表  
+    })
+  },
 })

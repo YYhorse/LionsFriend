@@ -11,7 +11,7 @@ Page({
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: '找狮友' });
-    if (options.name!=''){
+    if (options.name!=null){
       this.setData({
         BackMainStatus:true,
         FindText: options.name
@@ -50,10 +50,10 @@ Page({
   点击指定狮友:function(e){
     var that = this;
     var Index = e.currentTarget.dataset.numid;
-    console.log("点击店铺ID" + that.data.PeopleList[Index].store_code);
+    console.log("点击用户ID" + that.data.PeopleList[Index].user_id);
     wx.request({
       url: getApp().globalData.HomeUrl + getApp().globalData.GetStoreAllInfoUrl,
-      data: { 'store_code': that.data.PeopleList[Index].store_code },
+      data: { 'user_id': that.data.PeopleList[Index].user_id },
       method: 'POST',
       success: function (Ares) {
         console.log(Ares.data);

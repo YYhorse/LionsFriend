@@ -6,16 +6,17 @@
   <view class='sousuo' bindtap='点击搜索'><text class='searchText'>搜索</text></view>
 </view>
 <view class='LineLayout'></view>
-<!--展示产品-->
+<!--展示名片-->
 <block wx:for="{{PeopleList}}" wx:key="store_code">
   <view class='PeopleSingerLayout' data-numid="{{index}}" bindtap="点击指定狮友">
-    <!--产品图片-->
-    <image class='PeopleImageView' src='{{item.user_images}}'></image>
-    <!--显示产品信息-->
+    <!--名片头像-->
+    <image class='PeopleImageView' src='{{item.user_images}}' mode="aspectFit"></image>
+    <!--显示名片信息-->
     <view class='PeopleContextLayout'>
       <text class='PeopleTitleText'>{{item.real_name}}</text>
-      <text class='PeopleContextText'>所属：{{item.service_team_name}}</text>
-      <text class='PeopleContextText'>职务：{{item.current_position}}</text>
+      <text class='PeopleContextText'>服务队名：{{item.service_team_name}}</text>
+      <text class='PeopleContextText'>现任职务：{{item.current_position}}</text>
+      <text class='PlaceContextText'>现居地址：{{item.current_residence}}</text>
     </view>
   </view>
 </block>

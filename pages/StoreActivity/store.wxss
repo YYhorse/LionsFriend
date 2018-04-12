@@ -227,7 +227,7 @@
 }
 .BottomSmallLayoutOn{
   display:flex;
-  width: 30%;
+  width: 50%;
   height: 70rpx;
   padding: 5px 0;
   background-color: #E51C23;
@@ -238,7 +238,7 @@
 }
 .BottomSmallLayoutOff{
   display:flex;
-  width: 30%;
+  width: 50%;
   height: 70rpx;
   background-color: white;
   padding: 5px 0;

@@ -38,7 +38,9 @@ Page({
           })
         }
       },
-      fail: function () { wx.showToast({ title: '登陆失败,服务器异常', }) }
+      fail: function () { 
+        wx.showModal({ title: '服务器错误' }) 
+      }
     })
   },
   点击找狮友:function(e){
@@ -69,11 +71,25 @@ Page({
           wx.navigateTo({ url: '/pages/StoreActivity/store?storeJson=' + storeJson })
         }
         else {
-          wx.hideLoading();
-          wx.showToast({ title: '获取服务队信息错误,接口返回' + Ares.data.status_code, });
+          wx.showModal({
+            title: '接口错误',
+            content: Ares.data.error,
+          })
         }
       },
-      fail: function () { wx.showToast({ title: '获取店铺信息错误' }) }
+      fail: function () {
+        wx.showModal({  title: '服务器错误'}) 
+      }
     })
-  }
+  },
+  浏览图片: function (e) {
+    var current = e.target.dataset.src;
+    console.log(current);
+    var piclist = [];
+    piclist.push(current)
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: piclist // 需要预览的图片http链接列表  
+    })
+  },
 })

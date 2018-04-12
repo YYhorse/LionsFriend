@@ -133,7 +133,6 @@ Page({
     this.setData({ Honor: e.detail.value })
   },
   点击提交信息: function (e) {
-
     console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生地：" + this.data.BirthPlace + "现居地:" + this.data.AddressDetail+ "服务队:" + this.data.SelectServiceTeam + "入会时间:" + this.data.JoinDats + "现任:" + this.data.CurrentPosition + "历任:" + this.data.PreviousPosition + "荣耀:" + this.data.Honor+"图片:"+this.data.image_photo);
     if (this.data.RealName != '' && this.data.PhoneNumber != ''
       && this.data.BirthPlace != '' && this.data.AddressDetail != ''

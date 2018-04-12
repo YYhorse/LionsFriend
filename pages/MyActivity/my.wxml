@@ -11,7 +11,7 @@
     <image class='SingerRightImage' src='/images/right.png'></image>
   </view>
 </view>
-<!--狮友信息管理-->
+ <!-- 狮友信息管理 -->
 <view class="{{VipStatus=='vip'?'ManageLayout':'HideLayout'}}">
   <view class='SingerLayout' bindtap='点击我的名片'>
     <text class='SingerText'>我的名片</text>
@@ -32,5 +32,12 @@
       <image class='SingerRightImage' src='/images/right.png'></image>
     </view>
   </view>
+</view> 
+<view class='LineLayout2'></view>
+<view class='SingerLayout' bindtap='点击联系客服'>
+    <text class='SingerText'>联系客服</text>
+    <view class='SingerEndLayout'>
+      <image class='SingerRightImage' src='/images/right.png'></image>
+    </view>
 </view>
 

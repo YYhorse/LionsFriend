@@ -4,7 +4,7 @@
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>头像</text>
     <view class='SingerEndLayout'>
-      <image class='ShowPhotoImage' src="{{userInfo.user_images}}" mode="aspectFit"></image>
+      <image class='ShowPhotoImage' src="{{image_photo!=''?image_photo:userInfo.user_images}}" mode="aspectFit" bindtap='更换头像'></image>
     </view>
   </view>
   <!--姓名-->

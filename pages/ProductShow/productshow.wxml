@@ -2,7 +2,7 @@
 <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000">    
   <block wx:for="{{productList.product_images}}" wx:for-index="index"  wx:key="">    
     <swiper-item>    
-      <image src="{{item.current_url}}" class="slide-image" mode="aspectFill"/>    
+      <image src="{{item.current_url}}" class="slide-image" mode="aspectFill" data-src="{{item.current_url}}" bindtap='浏览图片'/>    
     </swiper-item>    
   </block>    
 </swiper> 

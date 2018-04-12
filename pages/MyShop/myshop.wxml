@@ -26,10 +26,13 @@
 </view>
 <!--所属行业-->
 <view class='TimeLayout'>
+  <text class='TimeText'>所属行业</text>
   <picker value="{{Index}}" range="{{Industries}}" bindchange="监听所属行业">  
-    <text class='TimeText'>所属行业</text>
-    <text class='TimeText2'>{{Industries[Index]}}</text>
+    <button class='WorkButton' >{{Industries[Index]}}</button>
   </picker>
+  <view class='SingerEndLayout2'>
+    <text class='PlaceText2' bindtap='点击联系客服'>找不到我的行业?</text>
+  </view>
 </view>
 <view class='LineLayout'></view>
 <view class='LineLayout'></view>

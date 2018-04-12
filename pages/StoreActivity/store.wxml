@@ -1,7 +1,7 @@
 <view class="{{SelectPostion==0?'ShowLayout':'HideLayout'}}">
   <!--头像-->
   <view class='PhotoLayout'>
-    <image class='AvatarImage' src="{{ShopInfoList.user_images}}" background-size="cover" mode="aspectFill"></image>
+    <image class='AvatarImage' src="{{ShopInfoList.user_images}}" background-size="cover" mode="aspectFill" data-src="{{ShopInfoList.user_images}}" bindtap='浏览图片'></image>
   </view>
   <!--姓名-->
   <view class='InputTitleLayout'>
@@ -74,7 +74,7 @@
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000">    
     <block wx:for="{{ShopInfoList.shop_images}}" wx:for-index="index"  wx:key="">    
       <swiper-item>    
-        <image src="{{item.current_url}}" class="slide-image" mode="aspectFill"/>    
+        <image src="{{item.current_url}}" class="slide-image" mode="aspectFill" data-src="{{item.current_url}}" bindtap='浏览图片'/>    
       </swiper-item>    
     </block>    
   </swiper> 
@@ -137,7 +137,7 @@
   <view class="{{SelectPostion==0?'BottomSmallLayoutOn':'BottomSmallLayoutOff'}}" bindtap='选择名片'>
     <text class="{{SelectPostion==0?'BottomTextOn':'BottomTextOff'}}">名片</text>
   </view>
-  <view class="{{SelectPostion==1?'BottomBigLayoutOn':'BottomBigLayoutOff'}}" bindtap='选择店铺'>
+  <view class="{{FindStoreCode==null?'HideLayout':SelectPostion==1?'BottomBigLayoutOn':'BottomBigLayoutOff'}}" bindtap='选择店铺'>
     <text class="{{SelectPostion==1?'BottomTextOn':'BottomTextOff'}}">店铺</text>
   </view>
   <view class='BottomSmallLayoutOff' bindtap='选择拨号'>

@@ -106,4 +106,7 @@ Page({
       }
     })
   },
+  点击联系客服:function(e){
+    wx.makePhoneCall({ phoneNumber: '13079896396' })
+  }
 })

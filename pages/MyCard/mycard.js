@@ -5,6 +5,7 @@ Page({
     userInfo:'',
     modifyStatus:false,
 
+    image_photo:'',
     real_name:'',
     phone_number:'',
     birthplace:'',
@@ -82,8 +83,136 @@ Page({
   输入现任职务: function (e) { this.setData({ current_position: e.detail.value }) },
   输入历任职务: function (e) { this.setData({ previous_position: e.detail.value }) },
   输入所获荣誉: function (e) { this.setData({ honor: e.detail.value }) },
+  更换头像:function(e){
+    var that = this
+    if (that.data.modifyStatus==true){
+      wx.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有  
+        success: function (res) {
+          var tempFilePaths = res.tempFilePaths;
+          that.data.image_photo = that.data.image_photo.concat(tempFilePaths);
+          that.setData({ image_photo: tempFilePaths[0] })
+        }
+      })
+    }
+  },
   点击名片保存:function(e){
-    console.log(this.data.real_name + "|" + this.data.phone_number + "|" + this.data.birthplace + "|" + this.data.current_residence + "|"
-      + this.data.service_team_name + "|" + this.data.admission_time + "|" + this.data.current_position + "|" + this.data.previous_position + "|" + this.data.honor)
+    // console.log(this.data.real_name + "|" + this.data.phone_number + "|" + this.data.birthplace + "|" + this.data.current_residence + "|"
+    //   + this.data.service_team_name + "|" + this.data.admission_time + "|" + this.data.current_position + "|" + this.data.previous_position + "|" + this.data.honor);
+    if (this.data.real_name != '' && this.data.phone_number != ''
+      && this.data.birthplace != '' && this.data.current_residence != ''
+      && this.data.service_team_name != '' && this.data.admission_time != '') {
+      if (this.data.image_photo == '')
+        this.UpdateInfoWithoutPic();
+      else
+        this.UpdateInfoWithPic();
+    }
+    else
+      wx.showToast({ title: '信息未填完', });
+  },
+  UpdateInfoWithPic: function () {
+    var that = this;
+    wx.showLoading({ title: '提交中' });
+    wx.uploadFile({
+      url: getApp().globalData.HomeUrl + getApp().globalData.PushUserUrl,
+      filePath: that.data.image_photo,
+      name: 'avatar',
+      formData: {
+        'user_id': app.globalData.user_id,
+        'real_name': that.data.real_name,
+        'phone_number': that.data.phone_number,
+        'birthplace': that.data.birthplace,
+        'address_detail': that.data.current_residence,
+        'service_team_name': that.data.service_team_name,
+        'admission_time': that.data.admission_time,
+        'current_position': that.data.current_position,
+        'previous_position': that.data.previous_position,
+        'honor': that.data.honor,
+      },
+      success: function (Ares) {
+        console.log(Ares.data);
+        wx.hideLoading();
+        if (Ares.data == '{"status_code":200}') {
+          console.log('上传成功');
+          wx.showModal({
+            title: '成功',
+            content: '更新名片信息成功!',
+            success: function (res) {
+              if (res.confirm || res.cancel) {
+                app.globalData.FlashUserInfoState = true;
+                wx.navigateBack();
+              }
+            }
+          })
+        }
+        else {
+          wx.showModal({
+            title: '错误提示',
+            content: '接口返回错误=' + Ares.data.state_code,
+            success: function (res) {
+              if (res.confirm || res.cancel)
+                wx.navigateBack();
+            }
+          })
+        }
+      },
+      fail: function () {
+        wx.hideLoading();
+        wx.showToast({ title: '提交失败,服务器异常', })
+      }
+    })
+  },
+  UpdateInfoWithoutPic:function(){
+    var that = this;
+    wx.showLoading({ title: '提交中' });
+    wx.request({
+      url: getApp().globalData.HomeUrl + getApp().globalData.PushUserUrl,
+      data: {
+        'user_id': app.globalData.user_id,
+        'real_name': that.data.real_name,
+        'phone_number': that.data.phone_number,
+        'birthplace': that.data.birthplace,
+        'address_detail': that.data.current_residence,
+        'service_team_name': that.data.service_team_name,
+        'admission_time': that.data.admission_time,
+        'current_position': that.data.current_position,
+        'previous_position': that.data.previous_position,
+        'honor': that.data.honor,
+      },
+      method: 'POST',
+      success: function (Ares) {
+        console.log(Ares.data);
+        wx.hideLoading();
+        if (Ares.statusCode == 200) {
+          console.log('上传成功');
+          wx.showModal({
+            title: '成功',
+            content: '更新名片信息成功!',
+            success: function (res) {
+              if (res.confirm || res.cancel) {
+                app.globalData.FlashUserInfoState = true;
+                wx.navigateBack();
+              }
+            }
+          })
+        }
+        else {
+          wx.showModal({
+            title: '错误提示',
+            content: '接口返回错误=' + Ares.data,
+            success: function (res) {
+              if (res.confirm || res.cancel)
+                wx.navigateBack();
+            }
+          })
+        }
+      },
+      fail: function () {
+        wx.hideLoading();
+        wx.showToast({ title: '提交失败,服务器异常', })
+      }
+    })
   }
 })

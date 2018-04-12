@@ -127,8 +127,10 @@ Page({
           wx.navigateTo({ url: '/pages/StoreActivity/store?storeJson=' + storeJson})
         }
         else {
-          wx.hideLoading();
-          wx.showToast({ title: '获取服务队信息错误,接口返回' + Ares.data.status_code, });
+          wx.showModal({
+            title: '接口错误',
+            content: Ares.data.error,
+          })
         }
       },
       fail: function () { wx.showToast({ title: '获取店铺信息错误' }) }
