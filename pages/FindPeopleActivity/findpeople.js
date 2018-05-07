@@ -4,10 +4,6 @@ Page({
     FindText:null,
     PeopleList:null,
     BackMainStatus:false,
-    // current_page: 0,
-    // Max_page: 100,
-    // PullDownRefreshStatus: false,
-    // PullUpRefreshStatus: false,
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: '找狮友' });
@@ -19,9 +15,7 @@ Page({
       this.点击搜索();
     }
   },
-  // onShow: function () {
-
-  // },
+  
   输入搜索:function(e){
     this.setData({ FindText: e.detail.value })
   },

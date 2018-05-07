@@ -21,6 +21,15 @@ Page({
       this.加载行业下产品();
     }
   },
+  onShow: function () {
+    if (app.globalData.user_id != null && app.globalData.vipStatus != 'vip') {
+      wx.switchTab({ url: '/pages/MyActivity/my' })
+      wx.showModal({
+        title: '提示',
+        content: app.globalData.vipStatus == 'tourist' ? '请先验证身份' : '请耐心等待审核',
+      })
+    }
+  },
   // 下拉刷新  
   onPullDownRefresh: function () {
     this.加载行业下产品();

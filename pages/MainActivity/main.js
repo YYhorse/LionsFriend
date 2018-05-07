@@ -8,7 +8,15 @@ Page({
     pullDownRefreshStatus:false,
   },
   onLoad: function (options) {
-    this.获取首页信息();
+      this.获取首页信息();   
+  },
+  onShow: function () {
+    if (app.globalData.user_id != null && app.globalData.vipStatus != 'vip'){
+      wx.switchTab({ url: '/pages/MyActivity/my' }) 
+      wx.showModal({  title: '提示',
+        content: app.globalData.vipStatus =='tourist'?'请先验证身份':'请耐心等待审核',
+      })
+    }
   },
   // 下拉刷新  
   onPullDownRefresh: function () {

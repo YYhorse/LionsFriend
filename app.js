@@ -49,6 +49,8 @@ App({
             getApp().globalData.realName = Ares.data.real_name;
             getApp().globalData.phoneNumber = Ares.data.phone_number;
           }
+          else
+            wx.switchTab({ url: '/pages/MyActivity/my' })      
         }
         else{
           wx.showModal({

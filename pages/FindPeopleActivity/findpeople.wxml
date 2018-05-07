@@ -1,4 +1,4 @@
-<view class="SearchLayout" >
+<view class="{{BackMainStatus==false?'SearchLayout':'HideShow'}}" >
   <view class="search_arr">
     <icon class="searchcion" size='20' color='#ffffff' type='search'></icon>  
     <input class="searchinput" placeholder="  请输入狮友姓名" placeholder-style="color:#DADADA"  bindinput="输入搜索"/>  
@@ -26,4 +26,4 @@
 </view>
 
 <!--底部更新-->
-<view class="{{BackMainStatus==true?'BottomNewServiceLayout':'HideShow'}}" bindtap='点击进入狮友圈'><text class='NewServiceText'>进入狮友圈</text></view>
+<!-- <view class="{{BackMainStatus==true?'BottomNewServiceLayout':'HideShow'}}" bindtap='点击进入狮友圈'><text class='NewServiceText'>进入狮友圈</text></view> -->

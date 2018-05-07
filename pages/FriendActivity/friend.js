@@ -1,3 +1,5 @@
+//获取应用实例
+const app = getApp()
 Page({
   data: {
     UserId: getApp().globalData.user_id,
@@ -109,11 +111,20 @@ Page({
       })
   },
   onShow: function () {
-    if (getApp().FlashActivityState == true) {
-      console.log('成功发布活动后刷新')
-      getApp().FlashActivityState = false;
-      this.data.current_page = 0;
-      this.获取活动();
+    if (app.globalData.user_id != null && app.globalData.vipStatus != 'vip') {
+      wx.switchTab({ url: '/pages/MyActivity/my' })
+      wx.showModal({
+        title: '提示',
+        content: app.globalData.vipStatus == 'tourist' ? '请先验证身份' : '请耐心等待审核',
+      })
+    }
+    else{
+      if (getApp().FlashActivityState == true) {
+        console.log('成功发布活动后刷新')
+        getApp().FlashActivityState = false;
+        this.data.current_page = 0;
+        this.获取活动();
+      }
     }
   }
 })
