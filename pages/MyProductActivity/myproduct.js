@@ -7,16 +7,11 @@ Page({
     image_photo:'',
     RealName: '',
     PhoneNumber: '',
-    ServiceTeamIndex: 0,  
-    ServiceTeam: [''],  
-    SelectServiceTeam:'',
-    BirthPlace:'',
     AddressDetail:'',
-    JoinDats:'',
-    CurrentPosition:'',
-    PreviousPosition:'',
-    Honor:'',
+    Dates:'',
 
+    SexInfo: ['男性', '女性'],
+    SexIndex:0,
     ProductList:'',
     current_page: 0,
     Max_page: 100,
@@ -30,10 +25,8 @@ Page({
       wx.setNavigationBarTitle({ title: '产品管理' });
       this.获取产品();
     }
-    else{
-      wx.setNavigationBarTitle({ title: '狮友身份验证' });
-      this.获取服务队信息();
-    }
+    else
+      wx.setNavigationBarTitle({ title: '身份验证' });
   },
   onShow: function () {
     if (getApp().globalData.FlashProductState == true) {
@@ -61,27 +54,6 @@ Page({
       this.获取产品();
     }
   },
-  获取服务队信息:function(){
-    var that = this;
-    wx.showLoading({ title: '提交中' }),
-      wx.request({
-        url: getApp().globalData.HomeUrl + getApp().globalData.GetServiceTeamUrl,
-        data: {},
-        method: 'POST',
-        success: function (Ares) {
-          console.log(Ares.data);
-          if (Ares.data.status_code == 200) {
-            wx.hideLoading();
-            that.setData({ ServiceTeam: Ares.data.service_teams })
-          }
-          else {
-            wx.hideLoading();
-            wx.showToast({ title: '获取服务队信息错误,接口返回' + Ares.data.status_code, });
-          }
-        },
-        fail: function () { wx.hideLoading(); wx.showToast({ title: '获取服务队信息错误'}) }
-      })
-  },
   上传照片:function(e){
     var that = this
     wx.chooseImage({
@@ -101,15 +73,15 @@ Page({
   输入手机号: function (e) {
     this.setData({ PhoneNumber: e.detail.value })
   },
-  输入服务队:function(e){
-    this.setData({ SelectServiceTeam: e.detail.value})
+  监听日期变化: function (e) {
+    this.setData({
+      Dates: e.detail.value
+    })
   },
-  监听服务队:function(e){
-    this.data.ServiceTeamIndex = e.detail.value;
-    this.setData({ SelectServiceTeam: this.data.ServiceTeam[this.data.ServiceTeamIndex]})  
-  },
-  输入出生地:function(e){
-    this.setData({ BirthPlace: e.detail.value})
+  监听性别变化:function(e){
+    this.setData({
+      SexIndex: e.detail.value
+    });
   },
   点击选择地点: function (e) {
     console.log("点击选择地点")
@@ -120,23 +92,9 @@ Page({
       }
     })
   },
-  监听日期变化:function(e){
-    this.setData({  JoinDats: e.detail.value  })
-  },
-  输入现任职务:function(e){
-    this.setData({ CurrentPosition: e.detail.value })
-  },
-  输入历任职务:function(e){
-    this.setData({ PreviousPosition: e.detail.value })
-  },
-  输入所获荣誉:function(e){
-    this.setData({ Honor: e.detail.value })
-  },
   点击提交信息: function (e) {
-    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生地：" + this.data.BirthPlace + "现居地:" + this.data.AddressDetail+ "服务队:" + this.data.SelectServiceTeam + "入会时间:" + this.data.JoinDats + "现任:" + this.data.CurrentPosition + "历任:" + this.data.PreviousPosition + "荣耀:" + this.data.Honor+"图片:"+this.data.image_photo);
-    if (this.data.RealName != '' && this.data.PhoneNumber != ''
-      && this.data.BirthPlace != '' && this.data.AddressDetail != ''
-      && this.data.SelectServiceTeam != '' && this.data.JoinDats != '') {
+    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生日期:" + this.data.Dates+ "现居地:" + this.data.AddressDetail+ "图片:"+this.data.image_photo);
+    if (this.data.RealName != '' && this.data.PhoneNumber != '' && this.data.AddressDetail != '') {
       if (this.data.image_photo=='')
         wx.showToast({ title: '请上传一张图片', });
       else {
@@ -145,11 +103,12 @@ Page({
       }
     }
     else
-      wx.showToast({ title: '带*号的必填', });
+      wx.showToast({ title: '信息未填全', });
   },
   UpdateInfo:function(){
     var that = this;
     wx.showLoading({ title: '提交中' });
+    var sexString = that.data.SexIndex == 0?'male':'female';
     wx.uploadFile({
       url: getApp().globalData.HomeUrl + getApp().globalData.PushUserUrl,
       filePath: that.data.image_photo,
@@ -158,13 +117,9 @@ Page({
         'user_id': app.globalData.user_id,
         'real_name': that.data.RealName,
         'phone_number': that.data.PhoneNumber,
-        'birthplace': that.data.BirthPlace,
         'address_detail': that.data.AddressDetail,
-        'service_team_name': that.data.SelectServiceTeam,
-        'admission_time': that.data.JoinDats,
-        'current_position': that.data.CurrentPosition,
-        'previous_position': that.data.PreviousPosition,
-        'honor': that.data.Honor,
+        'sex':sexString,
+        'birthday': '20180606'//that.data.Dates
       },
       success: function (Ares) {
         console.log(Ares.data);

@@ -68,9 +68,10 @@ Page({
         console.log(Ares.data);
         if (Ares.data.status_code == 200) {
           //{status_code: 200, user_state: "tourist", store_state: ""}
-          getApp().globalData.vipStatus = Ares.data.user_state;
+          // getApp().globalData.vipStatus = Ares.data.user_state;
+          getApp().globalData.vipStatus = "tourist";
           that.setData({ 
-            VipStatus: Ares.data.user_state,
+            VipStatus: getApp().globalData.vipStatus,
             ShopStatue: Ares.data.store_state,
           })
           if (Ares.data.user_state == 'vip'){
