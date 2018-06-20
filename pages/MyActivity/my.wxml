@@ -6,7 +6,7 @@
 <view class='LineLayout'></view>
 <!--狮友身份验证-->
 <view class="{{VipStatus!='vip'?'SingerLayout':'HideLayout'}}" bindtap='点击身份验证'>
-  <text class='SingerText'>{{VipStatus=='tourist'?'身份验证':'信息审核中'}}</text>
+  <text class='SingerText'>{{IdentyInfo}}</text>
   <view class='SingerEndLayout'>
     <image class='SingerRightImage' src='/images/right.png'></image>
   </view>

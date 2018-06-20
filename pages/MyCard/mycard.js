@@ -7,14 +7,10 @@ Page({
 
     image_photo:'',
     real_name:'',
+    sex:'',
+    birthday:'',
     phone_number:'',
-    birthplace:'',
     current_residence:'',
-    service_team_name:'',
-    admission_time:'',
-    current_position:'',
-    previous_position:'',
-    honor:''
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: '我的名片' });
@@ -65,24 +61,14 @@ Page({
       modifyStatus: true,
       real_name: that.data.userInfo.real_name,
       phone_number: that.data.userInfo.phone_number,
-      birthplace: that.data.userInfo.birthplace,
+      sex:that.data.userInfo.sex,
+      birthday: that.data.userInfo.birthday,
       current_residence: that.data.userInfo.current_residence,
-      service_team_name: that.data.userInfo.service_team_name,
-      admission_time: that.data.userInfo.admission_time,
-      current_position: that.data.userInfo.current_position,
-      previous_position: that.data.userInfo.previous_position,
-      honor: that.data.userInfo.honor
     })
   },
   输入姓名:function(e){    this.setData({ real_name: e.detail.value })  },
   输入手机号: function (e) { this.setData({ phone_number:e.detail.value})  },
-  输入出生地: function (e) { this.setData({ birthplace: e.detail.value }) },
   输入现居地: function (e) { this.setData({ current_residence: e.detail.value }) },
-  输入服务队: function (e) { this.setData({ service_team_name: e.detail.value }) },
-  监听日期变化: function (e) { this.setData({ admission_time: e.detail.value })  },
-  输入现任职务: function (e) { this.setData({ current_position: e.detail.value }) },
-  输入历任职务: function (e) { this.setData({ previous_position: e.detail.value }) },
-  输入所获荣誉: function (e) { this.setData({ honor: e.detail.value }) },
   更换头像:function(e){
     var that = this
     if (that.data.modifyStatus==true){

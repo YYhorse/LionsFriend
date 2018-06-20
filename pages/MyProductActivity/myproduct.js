@@ -119,7 +119,7 @@ Page({
         'phone_number': that.data.PhoneNumber,
         'address_detail': that.data.AddressDetail,
         'sex':sexString,
-        'birthday': '20180606'//that.data.Dates
+        'birthday': that.data.Dates
       },
       success: function (Ares) {
         console.log(Ares.data);

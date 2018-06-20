@@ -4,6 +4,7 @@ Page({
     AvatarUrl: "",
     NiceName:"无",
     StoreShowInfo:'',
+    IdentyInfo:'',
 
     pullDownRefreshStatus:false,
     VipStatus:'',
@@ -27,6 +28,9 @@ Page({
   点击身份验证:function(e){
     if (this.data.VipStatus == 'tourist')
       wx.navigateTo({ url: '/pages/MyProductActivity/myproduct' });
+    else if(this.data.VipStatus == 'normal'){
+      this.WechatPayMethod();
+    }
     else
       wx.showToast({  title: '请耐心等待验证'})
   },
@@ -68,13 +72,12 @@ Page({
         console.log(Ares.data);
         if (Ares.data.status_code == 200) {
           //{status_code: 200, user_state: "tourist", store_state: ""}
-          // getApp().globalData.vipStatus = Ares.data.user_state;
-          getApp().globalData.vipStatus = "tourist";
+          getApp().globalData.vipStatus = Ares.data.user_state;
           that.setData({ 
             VipStatus: getApp().globalData.vipStatus,
             ShopStatue: Ares.data.store_state,
           })
-          if (Ares.data.user_state == 'vip'){
+          if (Ares.data.user_state == 'vip'){ 
             //----刷新店铺状态显示-----//
             var temp = '';
             if (that.data.ShopStatue == 'audit_success')
@@ -87,6 +90,10 @@ Page({
               temp = '请创建'; 
             that.setData({ StoreShowInfo: temp });
           }
+          else if (Ares.data.user_state == 'normal')
+            that.setData({ IdentyInfo:'成为会员'})
+          else
+            that.setData({ IdentyInfo: '身份验证' })
         }
         else {
           wx.showModal({
@@ -110,5 +117,50 @@ Page({
   },
   点击联系客服:function(e){
     wx.makePhoneCall({ phoneNumber: '13079896396' })
+  },
+  WechatPayMethod:function(){
+    var that = this;
+    wx.request({
+      url: getApp().globalData.HomeUrl + getApp().globalData.WechatPayUrl,
+      data: {'user_id': getApp().globalData.user_id },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.status_code == 200) {
+          wx.requestPayment({
+            timeStamp: res.data.timeStamp,
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: 'MD5',
+            paySign: res.data.paySign,
+            success: function (res) {
+              wx.showModal({
+                title: '支付成功',
+                content: '恭喜您注册会员成功!',
+                success:function(res){
+                  if(res.confirm||res.cancel)
+                    that.获取个人信息();
+                }
+              })
+            },
+            fail: function (res) {
+              wx.showToast({title: '支付失败'})
+              that.获取个人信息();
+            }
+          })
+        }
+        else {
+          wx.showToast({
+            title: '支付接口返回错误',
+          })
+        }
+      },
+      fail: function () {
+        wx.showToast({
+          title: '失败',
+        })
+        console.log(res.data)
+      }
+    })
   }
 })

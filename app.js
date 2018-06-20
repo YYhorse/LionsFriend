@@ -99,7 +99,7 @@ App({
     UpdataProductUrl:'/api/v1/products/noimage_update', //更新产品信息 无图片情况   
     GetTypeUrl:'/api/v1/stores/service_index',  
     GetServiceTeamUrl:'/api/v1/service_teams/all_service_teams', 
-    GetUserAppliesUrl:'/api/v1/enter_applies', 
+    GetUserAppliesUrl:'/api/v1/user_informations', 
     ApplyRegisterUrl:'/api/v1/enter_applies',
     DelServiceUrl:'/api/v1/stores/destroy_store',
     EditServiceUrl:'/api/v1/stores/edit_store',
@@ -108,5 +108,6 @@ App({
     PushActivityUrl:'/api/v1/activities',
     PushMessageUrl:'/api/v1/personal_dynamics',
     DelActivityUrl:'/api/v1/activities/destroy_activity',
+    WechatPayUrl: '/api/v1/user_informations/wechat_pay' //微信支付
   }
 })

@@ -116,10 +116,10 @@ Page({
             })
           }
           else {
-            wx.showToast({ title: '获取服务队信息错误,接口返回' + Ares.data.status_code, });
+            wx.showToast({ title: '获取店铺信息错误,接口返回' + Ares.data.status_code, });
           }
         },
-        fail: function () { wx.hideLoading(); wx.showToast({ title: '获取服务队信息错误' }) }
+        fail: function () { wx.hideLoading(); wx.showToast({ title: '获取店铺信息错误' }) }
       })
   },
   输入店铺优惠:function(e) {

@@ -1,7 +1,7 @@
 <view class="{{SelectPostion==0?'ShowLayout':'HideLayout'}}">
   <!--头像-->
   <view class='PhotoLayout'>
-    <image class='AvatarImage' src="{{ShopInfoList.user_images}}" background-size="cover" mode="aspectFill" data-src="{{ShopInfoList.user_images}}" bindtap='浏览图片'></image>
+    <image class='AvatarImage' src="{{ShopInfoList.avatar}}" background-size="cover" mode="aspectFill" data-src="{{ShopInfoList.avatar}}" bindtap='浏览图片'></image>
   </view>
   <!--姓名-->
   <view class='InputTitleLayout'>
@@ -10,6 +10,21 @@
       <text class='SingerContextText'>{{ShopInfoList.real_name}}</text>
     </view>
   </view>
+  <!--性别-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>性别</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.sex=='male'?'男性':'女性'}}</text>
+    </view>
+  </view>
+   <!--生日-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>生日</text>
+    <view class='SingerEndLayout'>
+      <text class='SingerContextText'>{{ShopInfoList.birthday}}</text>
+    </view>
+  </view>
+  <view class='LineLayout'></view>
   <!--手机号-->
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>手机号</text>
@@ -17,55 +32,11 @@
       <text class='SingerContextText'>{{ShopInfoList.phone_number}}</text>
     </view>
   </view>
-  <view class='LineLayout'></view>
-  <!--出生地-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>出生地</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.birthplace}}</text>
-    </view>
-  </view>
   <!--现居地-->
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>现居地</text>
     <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.current_residence}}</text>
-    </view>
-  </view>
-   <view class='LineLayout'></view>
-  <!--所属服务队-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>所属服务队</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.service_team_name}}</text>
-    </view>
-  </view>
-  <!--入会时间-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>入会时间</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.admission_time}}</text>
-    </view>
-  </view>
-  <!--现任职务-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>现任职务</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.current_position}}</text>
-    </view>
-  </view>
-  <!--历任职务-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>历任职务</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.previous_position}}</text>
-    </view>
-  </view>
-  <!--所获荣誉-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>所获荣誉</text>
-    <view class='SingerEndLayout'>
-      <text class='SingerContextText'>{{ShopInfoList.honor}}</text>
+      <text class='SingerContextText'>{{ShopInfoList.address_detail}}</text>
     </view>
   </view>
 </view>

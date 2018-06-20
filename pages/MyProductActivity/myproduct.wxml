@@ -21,23 +21,22 @@
     <input class="InputEditText" placeholder="请输入手机号" placeholder-style="color:#DADADA" bindinput="输入手机号"/> 
   </view>
   <!--选择出生日期-->
-<view class='TimeLayout'>
-  <picker mode="date" value="{{Dates}}" start="1960-03-11" end="2028-03-11" bindchange="监听日期变化">  
-    <text class='InputTitleText'>出生日期:</text>
-    <text class='TimeText' placeholder='点击选取'>{{Dates}}</text>
-  </picker>
-</view>
-
-<view class='TimeLayout'>
-  <!--mode默认selector range数据源value选择的index bindchange事件监听-->
-  <picker mode="selector" range="{{SexInfo}}" value="{{SexIndex}}" bindchange="监听性别变化">
-       <text class='InputTitleText'>性别:</text>
-       <text class='SexText' placeholder='点击选取'>{{SexInfo[SexIndex]}}</text>
-  </picker>
-</view>
+  <view class='TimeLayout'>
+    <picker mode="date" value="{{Dates}}" start="1960-03-11" end="2028-03-11" bindchange="监听日期变化">  
+      <text class='InputTitleText'>出生日期:</text>
+      <text class='TimeText' placeholder='点击选取'>{{Dates}}</text>
+    </picker>
+  </view>
+  <view class='TimeLayout'>
+    <!--mode默认selector range数据源value选择的index bindchange事件监听-->
+    <picker mode="selector" range="{{SexInfo}}" value="{{SexIndex}}" bindchange="监听性别变化">
+        <text class='InputTitleText'>性别:</text>
+        <text class='SexText' placeholder='点击选取'>{{SexInfo[SexIndex]}}</text>
+    </picker>
+  </view>
   <!--居住地地点-->
   <view class='InputTitleLayout2' bindtap='点击选择地点'>
-    <text class='InputTitleText'>现居地址</text>
+    <text class='InputTitleText'>现居地址:</text>
     <view class='SingerEndLayout2'>
       <text class='PlaceText'>{{AddressDetail}}</text>
       <image class='SingerRightImage' src='/images/right.png'></image>

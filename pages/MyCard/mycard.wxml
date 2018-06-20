@@ -4,7 +4,7 @@
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>头像</text>
     <view class='SingerEndLayout'>
-      <image class='ShowPhotoImage' src="{{image_photo!=''?image_photo:userInfo.user_images}}" mode="aspectFit" bindtap='更换头像'></image>
+      <image class='ShowPhotoImage' src="{{image_photo!=''?image_photo:userInfo.avatar}}" mode="aspectFit" bindtap='更换头像'></image>
     </view>
   </view>
   <!--姓名-->
@@ -15,6 +15,23 @@
       <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入姓名" value="{{real_name}}" /> 
     </view>
   </view>
+  <!--性别-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>性别</text>
+    <view class='SingerEndLayout'>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.sex=='male'?'男性':'女性'}}</text>
+      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入性别" value="{{sex}}" /> 
+    </view>
+  </view>
+  <!--生日-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>生日</text>
+    <view class='SingerEndLayout'>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.birthday}}</text>
+      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入生日" value="{{birthday}}" /> 
+    </view>
+  </view>
+  <view class='LineLayout'></view>
   <!--手机号-->
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>手机号</text>
@@ -23,70 +40,15 @@
       <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入手机号" value="{{phone_number}}" /> 
     </view>
   </view>
-  <view class='LineLayout'></view>
-  <!--出生地-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>出生地址</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.birthplace}}</text>
-      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入出生地" value="{{birthplace}}" /> 
-    </view>
-  </view>
   <!--现居地-->
   <view class='InputTitleLayout'>
     <text class='InputTitleText'>现居地址</text>
     <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.current_residence}}</text>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.address_detail}}</text>
       <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入现居地" value="{{current_residence}}"/> 
     </view>
   </view>
   <view class='LineLayout'></view>
-  <!--所属服务队-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>所属服务队</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.service_team_name}}</text>
-      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入服务队" value="{{service_team_name}}"/>
-    </view>
-  </view>
-  <!--入会时间-->
-  <view class="{{modifyStatus==false?'InputTitleLayout':'HideLayout'}}">
-    <text class='InputTitleText'>入会时间</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.admission_time}}</text>
-    </view>
-  </view>
-  <!--选择入会时间-->
-  <view class="{{modifyStatus==true?'TimeLayout':'HideLayout'}}">
-    <picker mode="date" value="{{admission_time}}" start="2016-03-11" end="2020-03-11" bindchange="监听日期变化">  
-      <text class='InputTitleText'>入会时间:  </text>
-      <text class='SingerContextText' placeholder='点击选取'>{{admission_time}}</text>
-    </picker>
-  </view>
-  <!--现任职务-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>现任职务</text>
-    <view class='SingerEndLayout'>
-     <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.current_position}}</text>
-     <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入现任职务" value="{{current_position}}"/> 
-    </view>
-  </view>
-  <!--历任职务-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>历任职务</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.previous_position}}</text>
-      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入历任职务" value="{{previous_position}}"/> 
-    </view>
-  </view>
-  <!--所获荣誉-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>所获荣誉</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.honor}}</text>
-      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入所获荣誉" value="{{honor}}"/> 
-    </view>
-  </view>
 </scroll-view>
 <!--底部按钮-->
 <view class='BottomLayout'>
