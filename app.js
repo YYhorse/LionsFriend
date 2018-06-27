@@ -19,7 +19,7 @@ App({
               if(that.userInfoReadyCallback)
                 that.userInfoReadyCallback(res)
               console.log(res.userInfo);
-              that.AutoLogin(res);                  //自动登陆
+              that.AutoLogin(res);      //自动登陆
             },
             fail: function () { wx.showToast({ title: "获取信息失败!", }) }
           })
@@ -50,7 +50,7 @@ App({
             getApp().globalData.phoneNumber = Ares.data.phone_number;
           }
           else
-            wx.switchTab({ url: '/pages/MyActivity/my' })      
+            wx.switchTab({ url: '/pages/MyActivity/my' })   
         }
         else{
           wx.showModal({
@@ -79,7 +79,7 @@ App({
     FlashSelectFlag:false,
     HomeUrl:'https://lionsshop.cn',
     LoginUrl:'/api/v1/users/login',
-    PushUserUrl:'/api/v1/user_informations',
+    PushUserUrl:'/api/v1/enter_applies',
     GetHomeUrl:'/api/v1/users/home_page',
     FlashUserUrl:'/api/v1/users/refresh_information',   //刷新用户店铺信息 【我的】
     FindPeopleUrl:'/api/v1/users/find_friend',          //寻找狮友
@@ -108,6 +108,6 @@ App({
     PushActivityUrl:'/api/v1/activities',
     PushMessageUrl:'/api/v1/personal_dynamics',
     DelActivityUrl:'/api/v1/activities/destroy_activity',
-    WechatPayUrl: '/api/v1/user_informations/wechat_pay' //微信支付
+    WechatPayUrl: '/api/v1/user_informations/wechat_pay' //寰®淇℃敮浠
   }
 })

@@ -11,14 +11,21 @@
     <image class='SingerRightImage' src='/images/right.png'></image>
   </view>
 </view>
+<!--狮友名片-->
+<view class="{{VipStatus!='tourist'?'SingerLayout':'HideLayout'}}" bindtap='点击我的名片'>
+  <text class='SingerText'>我的名片</text>
+  <view class='SingerEndLayout'>
+    <image class='SingerRightImage' src='/images/right.png'></image>
+  </view>
+</view>
  <!-- 狮友信息管理 -->
 <view class="{{VipStatus=='vip'?'ManageLayout':'HideLayout'}}">
-  <view class='SingerLayout' bindtap='点击我的名片'>
+  <!-- <view class='SingerLayout' bindtap='点击我的名片'>
     <text class='SingerText'>我的名片</text>
     <view class='SingerEndLayout'>
       <image class='SingerRightImage' src='/images/right.png'></image>
     </view>
-  </view>
+  </view> -->
   <view class='SingerLayout' bindtap='点击店铺管理'>
     <text class='SingerText'>店铺管理</text>
     <view class='SingerEndLayout'>

@@ -54,7 +54,7 @@ Page({
             }
           }
           else if (Ares.data.status_code == 604){
-            wx.showToast({ title: '狮友圈无活动!', })
+            // wx.showToast({ title: '狮友圈无活动!', })
             if (that.data.current_page < that.data.Max_page)
               that.data.Max_page = that.data.current_page;
             else
