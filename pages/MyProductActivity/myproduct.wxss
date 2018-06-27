@@ -53,7 +53,7 @@
   color: black;
   font-weight:bold;
   margin-left: 40rpx;
-  width: 200rpx;
+  width: 180rpx;
 }
 .InputEditText{
   font-size: 16px;
@@ -101,7 +101,7 @@
 .SexText{
   font-size: 16px;
   color: gray;
-  margin-left: 60rpx;
+  margin-left: 120rpx;
 }
 .Picker{
   display: flex;

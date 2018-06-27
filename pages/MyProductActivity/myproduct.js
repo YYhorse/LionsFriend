@@ -8,7 +8,7 @@ Page({
     RealName: '',
     PhoneNumber: '',
     AddressDetail:'',
-    Dates:'',
+    Dates:'2018-08-08',
 
     SexInfo: ['男性', '女性'],
     SexIndex:0,
@@ -73,25 +73,28 @@ Page({
   输入手机号: function (e) {
     this.setData({ PhoneNumber: e.detail.value })
   },
-  监听日期变化: function (e) {
-    this.setData({
-      Dates: e.detail.value
-    })
+  输入现居地: function (e) {
+    this.setData({ AddressDetail: e.detail.value })
   },
+  // 监听日期变化: function (e) {
+  //   this.setData({
+  //     Dates: e.detail.value
+  //   })
+  // },
   监听性别变化:function(e){
     this.setData({
       SexIndex: e.detail.value
     });
   },
-  点击选择地点: function (e) {
-    console.log("点击选择地点")
-    var that = this;
-    wx.chooseLocation({
-      success: function (res) {
-        that.setData({ AddressDetail: res.address  })
-      }
-    })
-  },
+  // 点击选择地点: function (e) {
+  //   console.log("点击选择地点")
+  //   var that = this;
+  //   wx.chooseLocation({
+  //     success: function (res) {
+  //       that.setData({ AddressDetail: res.address  })
+  //     }
+  //   })
+  // },
   点击提交信息: function (e) {
     console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生日期:" + this.data.Dates+ "现居地:" + this.data.AddressDetail+ "图片:"+this.data.image_photo);
     if (this.data.RealName != '' && this.data.PhoneNumber != '' && this.data.AddressDetail != '') {
