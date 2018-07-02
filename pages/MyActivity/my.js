@@ -93,7 +93,7 @@ Page({
           else if (Ares.data.user_state == 'normal')
             that.setData({ IdentyInfo:'成为会员'})
           else
-            that.setData({ IdentyInfo: '身份验证' })
+            that.setData({ IdentyInfo: '注册名片' })
         }
         else {
           wx.showModal({

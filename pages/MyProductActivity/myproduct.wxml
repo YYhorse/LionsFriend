@@ -33,6 +33,21 @@
     <input class="InputEditText" placeholder="请输入现居地" placeholder-style="color:#DADADA" bindinput="输入现居地"/> 
   </view>
   <view class='LineLayout'></view>
+  <!--输入公司-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>公司</text>
+    <input class="InputEditText" placeholder="请输入公司" placeholder-style="color:#DADADA" bindinput="输入公司"/> 
+  </view>
+  <!--输入职位-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>职位</text>
+    <input class="InputEditText" placeholder="请输入职位" placeholder-style="color:#DADADA" bindinput="输入职位"/> 
+  </view>
+  <!--输入邮箱-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>邮箱</text>
+    <input class="InputEditText" placeholder="请输入邮箱" placeholder-style="color:#DADADA" bindinput="输入邮箱"/> 
+  </view>
   <!--信息提交-->
   <button class='AppleBtn' type="warn" bindtap='点击提交信息'>提交信息</button>
 </view>

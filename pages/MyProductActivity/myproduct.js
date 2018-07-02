@@ -8,7 +8,9 @@ Page({
     RealName: '',
     PhoneNumber: '',
     AddressDetail:'',
-    Dates:'2018-08-08',
+    CompanyName:'',
+    CompanyJob:'',
+    Email:'',
 
     SexInfo: ['男性', '女性'],
     SexIndex:0,
@@ -26,7 +28,7 @@ Page({
       this.获取产品();
     }
     else
-      wx.setNavigationBarTitle({ title: '身份验证' });
+      wx.setNavigationBarTitle({ title: '注册会员' });
   },
   onShow: function () {
     if (getApp().globalData.FlashProductState == true) {
@@ -76,27 +78,22 @@ Page({
   输入现居地: function (e) {
     this.setData({ AddressDetail: e.detail.value })
   },
-  // 监听日期变化: function (e) {
-  //   this.setData({
-  //     Dates: e.detail.value
-  //   })
-  // },
+  输入公司:function(e){
+    this.setData({ CompanyName: e.detail.value })
+  },
+  输入职位: function (e) {
+    this.setData({ CompanyJob: e.detail.value })
+  },
+  输入邮箱:function(e){
+    this.setData({ Email: e.detail.value })
+  },
   监听性别变化:function(e){
     this.setData({
       SexIndex: e.detail.value
     });
   },
-  // 点击选择地点: function (e) {
-  //   console.log("点击选择地点")
-  //   var that = this;
-  //   wx.chooseLocation({
-  //     success: function (res) {
-  //       that.setData({ AddressDetail: res.address  })
-  //     }
-  //   })
-  // },
   点击提交信息: function (e) {
-    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "出生日期:" + this.data.Dates+ "现居地:" + this.data.AddressDetail+ "图片:"+this.data.image_photo);
+    console.log("姓名:" + this.data.RealName + "手机号:" + this.data.PhoneNumber + "现居地:" + this.data.AddressDetail + "图片:" + this.data.image_photo + "公司:" + this.data.CompanyName + "职位:" + this.data.CompanyJob + "邮箱:" + this.data.Email);
     if (this.data.RealName != '' && this.data.PhoneNumber != '' && this.data.AddressDetail != '') {
       if (this.data.image_photo=='')
         wx.showToast({ title: '请上传一张图片', });
@@ -121,8 +118,10 @@ Page({
         'real_name': that.data.RealName,
         'phone_number': that.data.PhoneNumber,
         'address_detail': that.data.AddressDetail,
+        'company_name': that.data.CompanyName,
+        'company_job': that.data.CompanyJob,
+        'email': that.data.Email,
         'sex':sexString,
-        'birthday': that.data.Dates
       },
       success: function (Ares) {
         console.log(Ares.data);
@@ -143,7 +142,7 @@ Page({
         else {
           wx.showModal({
             title: '错误提示',
-            content: '接口返回错误=' + Ares.data.state_code,
+            content: '接口返回错误=' + Ares.data.status_code,
             success: function (res) {
               if (res.confirm || res.cancel)
                 wx.navigateBack();

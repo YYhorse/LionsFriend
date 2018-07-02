@@ -23,14 +23,6 @@
       <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入性别" value="{{sex}}" /> 
     </view>
   </view>
-  <!--生日-->
-  <view class='InputTitleLayout'>
-    <text class='InputTitleText'>生日</text>
-    <view class='SingerEndLayout'>
-      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.birthday}}</text>
-      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入生日" value="{{birthday}}" /> 
-    </view>
-  </view>
   <view class='LineLayout'></view>
   <!--手机号-->
   <view class='InputTitleLayout'>
@@ -49,6 +41,30 @@
     </view>
   </view>
   <view class='LineLayout'></view>
+  <!--公司-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>公司</text>
+    <view class='SingerEndLayout'>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.company_name}}</text>
+      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入公司" value="{{company_name}}" /> 
+    </view>
+  </view>
+   <!--职位-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>职位</text>
+    <view class='SingerEndLayout'>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.company_job}}</text>
+      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入职位" value="{{company_job}}" /> 
+    </view>
+  </view>
+   <!--邮箱-->
+  <view class='InputTitleLayout'>
+    <text class='InputTitleText'>邮箱</text>
+    <view class='SingerEndLayout'>
+      <text class="{{modifyStatus==false?'SingerContextText':'HideLayout'}}">{{userInfo.email}}</text>
+      <input class="{{modifyStatus==true?'InputEditText':'HideLayout'}}" bindinput="输入邮箱" value="{{email}}" /> 
+    </view>
+  </view>
 </scroll-view>
 <!--底部按钮-->
 <view class='BottomLayout'>

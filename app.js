@@ -79,7 +79,7 @@ App({
     FlashSelectFlag:false,
     HomeUrl:'https://lionsshop.cn',
     LoginUrl:'/api/v1/users/login',
-    PushUserUrl:'/api/v1/enter_applies',
+    PushUserUrl:'/api/v1/user_informations',
     GetHomeUrl:'/api/v1/users/home_page',
     FlashUserUrl:'/api/v1/users/refresh_information',   //刷新用户店铺信息 【我的】
     FindPeopleUrl:'/api/v1/users/find_friend',          //寻找狮友
