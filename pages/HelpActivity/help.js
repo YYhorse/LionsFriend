@@ -87,7 +87,7 @@ Page({
     var that = this;
       wx.request({
       url: getApp().globalData.HomeUrl + getApp().globalData.GetIndustriesStoreUrl,
-      data: { "industry_code": that.data.IndustriesList[that.data.SelectPostion].code},
+      data: { "industry_code": that.data.IndustriesList[that.data.SelectPostion].code,"current_page":0},
         method: 'POST',
         success: function (Ares) {
           wx.hideNavigationBarLoading();

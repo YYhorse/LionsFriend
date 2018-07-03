@@ -16,6 +16,7 @@ Page({
     shop_images:[],
     image_photo: [],
     PicSelect: 0,
+    firstShop:false,
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({ title: '我的店铺' });
@@ -110,6 +111,7 @@ Page({
             })
           }
           else if (Ares.data.status_code == 605){
+            that.setData({ firstShop:true})
             wx.showModal({
               title: '请创建店铺',
               content: '店铺无信息，请填写信息'
@@ -158,10 +160,13 @@ Page({
     if (this.data.shopName != null && this.data.addressName != null 
       && this.data.Industries[this.data.Index] !='请选择行业') {
       if (this.data.image_photo.length==0){
-        //wx.showToast({ title: '请上传一张图片', });
-        console.log('无图片更新数据');
-        wx.showLoading({ title: '提交中' });
-        this.UpdateShopInfo();
+        if (this.data.firstShop==true)
+          wx.showToast({ title: '开店请上传一张图片', });
+        else{
+          console.log('无图片更新数据');
+          wx.showLoading({ title: '提交中' });
+          this.UpdateShopInfo();
+        }
       }
       else {
         wx.showLoading({ title: '提交中' });
